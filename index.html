@@ -406,19 +406,29 @@
 <section class="nutricion-section" id="nutricion">
   <div class="nutricion-inner">
     <div class="nutricion-visual reveal">
-      <div class="nutricion-block">
-        <div class="nutricion-block-content">
-          <div class="nutricion-label">Servicio Premium</div>
-          <div class="nutricion-prof">LIC. CAROLINA<br>GARCÍA</div>
-          <div class="nutricion-title-lic">Licenciada en Nutrición</div>
-          <a href="https://wa.me/542604840322" target="_blank" class="nutricion-contact">
-            <span class="nutricion-contact-icon">📱</span>
+      <div style="position:relative;">
+        <!-- Foto de la nutricionista -->
+        <div style="position:relative;overflow:hidden;">
+          <img src="./foto.jpg" alt="Lic. Carolina García — Nutricionista" style="width:100%;height:420px;object-fit:cover;object-position:center top;display:block;filter:brightness(0.88) contrast(1.05);">
+          <!-- Overlay degradado inferior -->
+          <div style="position:absolute;bottom:0;left:0;right:0;height:55%;background:linear-gradient(to top,rgba(10,10,10,0.95) 0%,transparent 100%);"></div>
+          <!-- Badge rojo superior -->
+          <div style="position:absolute;top:16px;left:16px;background:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;padding:5px 16px;color:var(--white);">Servicio Premium</div>
+        </div>
+        <!-- Info sobre la foto -->
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:24px 28px;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:2px;color:var(--white);line-height:1;">LIC. CAROLINA<br>GARCÍA</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:3px;color:rgba(255,255,255,0.7);text-transform:uppercase;margin:6px 0 16px;">Licenciada en Nutrición</div>
+          <a href="https://wa.me/542604840322" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:var(--red);padding:12px 20px;text-decoration:none;">
+            <span style="font-size:18px;">📱</span>
             <div>
-              <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:3px;color:rgba(255,255,255,0.6);text-transform:uppercase;">WhatsApp</div>
-              <div class="nutricion-contact-num">2604 840322</div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:3px;color:rgba(255,255,255,0.7);text-transform:uppercase;">WhatsApp</div>
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:var(--white);">2604 840322</div>
             </div>
           </a>
         </div>
+        <!-- Marco decorativo -->
+        <div style="position:absolute;top:-10px;left:-10px;right:10px;bottom:10px;border:2px solid rgba(217,28,28,0.25);pointer-events:none;z-index:0;"></div>
       </div>
     </div>
     <div class="nutricion-content reveal">
@@ -474,13 +484,13 @@
       </div>
     </div>
     <div class="reveal">
-      <div class="contacto-map">
-        <div class="map-placeholder">
-          <div class="map-icon">📍</div>
-          <p>Nos encontrás en</p>
-          <strong>FLEMING 758</strong>
-          <p style="margin-top:8px;font-size:13px;">Mendoza, Argentina</p>
-        </div>
+      <div class="contacto-map" style="padding:0;border:none;height:300px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.!2d-68.3311521!3d-34.5967988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967907df26d63437%3A0x8e6dede7c4e324bb!2sFleming%20758%2C%20M5602%20San%20Rafael%2C%20Mendoza!5e0!3m2!1ses!2sar!4v1700000000000"
+          width="100%" height="300" style="border:0;display:block;filter:grayscale(1) contrast(1.1) brightness(0.85);"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Danger Fitness — Fleming 758, San Rafael, Mendoza">
+        </iframe>
       </div>
       <div style="background:var(--dark2);padding:20px;border-top:3px solid var(--red);margin-top:2px;">
         <p style="font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:2px;color:var(--light-gray);text-transform:uppercase;">Horario de atención</p>
