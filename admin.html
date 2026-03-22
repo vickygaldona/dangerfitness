@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin — Danger Fitness</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root { --red:#D91C1C; --black:#0a0a0a; --dark:#111; --dark2:#1a1a1a; --gray:#2a2a2a; --light-gray:#888; --white:#fff; --green:#22c55e; --yellow:#eab308; --orange:#f97316; }
+  :root { --red:#D91C1C; --red-dark:#A81212; --black:#0a0a0a; --dark:#111; --dark2:#1a1a1a; --gray:#2a2a2a; --light-gray:#888; --white:#fff; --green:#22c55e; --yellow:#eab308; --orange:#f97316; }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'Barlow',sans-serif; background:var(--black); color:var(--white); min-height:100vh; }
   .sidebar { position:fixed; left:0; top:0; bottom:0; width:220px; background:var(--dark); border-right:1px solid rgba(255,255,255,0.06); display:flex; flex-direction:column; z-index:100; }
@@ -30,59 +28,85 @@
   .stat-card.yellow { border-left-color:var(--yellow); }
   .stat-card.orange { border-left-color:var(--orange); }
   .stat-label { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--light-gray); margin-bottom:8px; }
-  .stat-number { font-family:'Bebas Neue',sans-serif; font-size:42px; letter-spacing:2px; line-height:1; }
+  .stat-number { font-family:'Bebas Neue',sans-serif; font-size:42px; letter-spacing:2px; line-height:1; color:var(--red); }
   .stat-card.green .stat-number { color:var(--green); }
   .stat-card.yellow .stat-number { color:var(--yellow); }
   .stat-card.orange .stat-number { color:var(--orange); }
-  .stat-card .stat-number { color:var(--red); }
   .section { background:var(--dark2); margin-bottom:24px; }
   .section-header { padding:20px 24px; border-bottom:1px solid rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
   .section-title { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:2px; color:var(--white); }
-  .btn { font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:800; letter-spacing:2px; text-transform:uppercase; border:none; cursor:pointer; padding:10px 20px; transition:all 0.2s; }
+  .btn { font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:800; letter-spacing:2px; text-transform:uppercase; border:none; cursor:pointer; padding:10px 20px; transition:all 0.2s; display:inline-flex; align-items:center; gap:6px; }
   .btn-red { background:var(--red); color:var(--white); }
-  .btn-red:hover { background:#A81212; }
+  .btn-red:hover { background:var(--red-dark); }
+  .btn-green { background:rgba(34,197,94,0.15); color:var(--green); border:1px solid rgba(34,197,94,0.3); }
+  .btn-green:hover { background:rgba(34,197,94,0.25); }
+  .btn-yellow { background:rgba(234,179,8,0.15); color:var(--yellow); border:1px solid rgba(234,179,8,0.3); }
+  .btn-yellow:hover { background:rgba(234,179,8,0.25); }
   .btn-gray { background:var(--gray); color:var(--white); }
   .btn-gray:hover { background:#3a3a3a; }
-  .btn-sm { padding:6px 14px; font-size:11px; }
+  .btn-sm { padding:6px 12px; font-size:11px; }
+  .btn-xs { padding:4px 8px; font-size:10px; }
   .table-wrap { overflow-x:auto; }
   table { width:100%; border-collapse:collapse; }
   th { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--light-gray); padding:12px 16px; text-align:left; border-bottom:1px solid rgba(255,255,255,0.06); white-space:nowrap; }
-  td { padding:14px 16px; font-size:14px; border-bottom:1px solid rgba(255,255,255,0.04); vertical-align:middle; }
+  td { padding:12px 16px; font-size:14px; border-bottom:1px solid rgba(255,255,255,0.04); vertical-align:middle; }
   tr:hover td { background:rgba(255,255,255,0.02); }
   .badge { display:inline-block; font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:4px 10px; }
   .badge-green { background:rgba(34,197,94,0.15); color:var(--green); }
   .badge-red { background:rgba(217,28,28,0.15); color:var(--red); }
   .badge-yellow { background:rgba(234,179,8,0.15); color:var(--yellow); }
   .badge-orange { background:rgba(249,115,22,0.15); color:var(--orange); }
-  .modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:1000; align-items:center; justify-content:center; padding:20px; }
+  .badge-blue { background:rgba(59,130,246,0.15); color:#60a5fa; }
+
+  /* Clases pills */
+  .clases-bar { display:flex; align-items:center; gap:8px; }
+  .clases-dots { display:flex; gap:3px; }
+  .dot { width:10px; height:10px; border-radius:50%; }
+  .dot.used { background:var(--light-gray); }
+  .dot.available { background:var(--green); }
+  .dot.lost { background:var(--red); opacity:0.4; }
+  .clases-text { font-family:'Barlow Condensed',sans-serif; font-size:12px; letter-spacing:1px; color:var(--light-gray); }
+
+  .modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:1000; align-items:center; justify-content:center; padding:20px; overflow-y:auto; }
   .modal-overlay.open { display:flex; }
-  .modal { background:var(--dark2); width:100%; max-width:480px; border-top:3px solid var(--red); }
+  .modal { background:var(--dark2); width:100%; max-width:520px; border-top:3px solid var(--red); margin:auto; }
   .modal-header { padding:20px 24px; border-bottom:1px solid rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:space-between; }
   .modal-title { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:2px; }
   .modal-close { background:none; border:none; color:var(--light-gray); font-size:20px; cursor:pointer; padding:4px; }
   .modal-close:hover { color:var(--white); }
   .modal-body { padding:24px; }
-  .form-group { margin-bottom:20px; }
+  .form-group { margin-bottom:18px; }
   .form-label { display:block; font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--light-gray); margin-bottom:8px; }
   .form-input, .form-select { width:100%; background:var(--gray); border:1px solid rgba(255,255,255,0.08); color:var(--white); padding:12px 16px; font-family:'Barlow',sans-serif; font-size:15px; outline:none; transition:border-color 0.2s; }
   .form-input:focus, .form-select:focus { border-color:var(--red); }
   .form-select option { background:var(--gray); }
-  .modal-footer { padding:16px 24px; border-top:1px solid rgba(255,255,255,0.06); display:flex; gap:12px; justify-content:flex-end; }
+  .modal-footer { padding:16px 24px; border-top:1px solid rgba(255,255,255,0.06); display:flex; gap:12px; justify-content:flex-end; flex-wrap:wrap; }
   .search-box { display:flex; align-items:center; gap:8px; background:var(--gray); padding:8px 16px; flex:1; max-width:300px; }
   .search-box input { background:none; border:none; color:var(--white); font-family:'Barlow',sans-serif; font-size:14px; outline:none; width:100%; }
   .search-box input::placeholder { color:var(--light-gray); }
-  .tabs { display:flex; border-bottom:1px solid rgba(255,255,255,0.06); }
-  .tab { font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:14px 24px; cursor:pointer; color:var(--light-gray); border-bottom:2px solid transparent; transition:all 0.2s; }
+  .tabs { display:flex; border-bottom:1px solid rgba(255,255,255,0.06); flex-wrap:wrap; }
+  .tab { font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:14px 20px; cursor:pointer; color:var(--light-gray); border-bottom:2px solid transparent; transition:all 0.2s; }
   .tab:hover { color:var(--white); }
   .tab.active { color:var(--white); border-bottom-color:var(--red); }
   .empty-state { text-align:center; padding:60px 20px; }
   .empty-state .icon { font-size:48px; margin-bottom:16px; }
   .empty-state p { font-family:'Barlow Condensed',sans-serif; font-size:16px; letter-spacing:2px; color:var(--light-gray); text-transform:uppercase; }
   .loading { text-align:center; padding:40px; font-family:'Barlow Condensed',sans-serif; font-size:14px; letter-spacing:3px; color:var(--light-gray); text-transform:uppercase; }
-  .toast { position:fixed; bottom:24px; right:24px; background:var(--dark2); border-left:3px solid var(--green); padding:16px 20px; z-index:2000; font-family:'Barlow Condensed',sans-serif; font-size:15px; letter-spacing:1px; transform:translateY(100px); opacity:0; transition:all 0.3s; }
+  .toast { position:fixed; bottom:24px; right:24px; background:var(--dark2); border-left:3px solid var(--green); padding:16px 20px; z-index:2000; font-family:'Barlow Condensed',sans-serif; font-size:14px; letter-spacing:1px; transform:translateY(100px); opacity:0; transition:all 0.3s; max-width:320px; }
   .toast.show { transform:translateY(0); opacity:1; }
   .toast.error { border-left-color:var(--red); }
-  @media (max-width:768px) { .sidebar{width:60px;} .sidebar-logo .brand,.sidebar-logo .sub,.nav-item span{display:none;} .nav-item{padding:14px;justify-content:center;} .main{margin-left:60px;padding:20px;} }
+
+  /* Confirmar pago highlight */
+  .pendiente-row td { border-left:2px solid var(--yellow); }
+  .info-box { background:var(--gray); border-left:3px solid var(--red); padding:14px 18px; margin-bottom:20px; font-family:'Barlow Condensed',sans-serif; font-size:14px; letter-spacing:1px; color:var(--light-gray); line-height:1.6; }
+  .info-box strong { color:var(--white); }
+
+  @media (max-width:768px) {
+    .sidebar { width:60px; }
+    .sidebar-logo .brand,.sidebar-logo .sub,.nav-item span { display:none; }
+    .nav-item { padding:14px; justify-content:center; }
+    .main { margin-left:60px; padding:16px; }
+  }
 </style>
 </head>
 <body>
@@ -109,14 +133,36 @@
     </div>
     <div class="stats-grid">
       <div class="stat-card green"><div class="stat-label">Clientes Activos</div><div class="stat-number" id="stat-activos">—</div></div>
-      <div class="stat-card yellow"><div class="stat-label">Pendientes de Pago</div><div class="stat-number" id="stat-pendientes">—</div></div>
+      <div class="stat-card yellow"><div class="stat-label">Pago Pendiente</div><div class="stat-number" id="stat-pendientes">—</div></div>
       <div class="stat-card orange"><div class="stat-label">Vencidos</div><div class="stat-number" id="stat-vencidos">—</div></div>
       <div class="stat-card"><div class="stat-label">Total Clientes</div><div class="stat-number" id="stat-total">—</div></div>
     </div>
-    <div class="section" id="alertas-section" style="display:none;">
-      <div class="section-header"><div class="section-title">⚠️ REQUIEREN ATENCIÓN</div></div>
-      <div class="table-wrap"><table><thead><tr><th>Cliente</th><th>Teléfono</th><th>Plan</th><th>Estado</th><th>Vencimiento</th><th>Acciones</th></tr></thead><tbody id="tabla-alertas"></tbody></table></div>
+
+    <!-- PENDIENTES DE CONFIRMACIÓN -->
+    <div class="section" id="pendientes-section" style="display:none;">
+      <div class="section-header">
+        <div class="section-title">💳 CONFIRMAR PAGOS</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:2px;color:var(--yellow);text-transform:uppercase;">Requieren confirmación manual</div>
+      </div>
+      <div class="table-wrap">
+        <table><thead><tr><th>Cliente</th><th>Teléfono</th><th>Plan</th><th>Horario</th><th>Fecha Inscripción</th><th>Acciones</th></tr></thead>
+        <tbody id="tabla-pendientes"></tbody></table>
+      </div>
     </div>
+
+    <!-- VENCIMIENTOS PRÓXIMOS -->
+    <div class="section" id="vencimientos-section" style="display:none;">
+      <div class="section-header">
+        <div class="section-title">⏰ VENCEN PRONTO</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;">En los próximos 5 días</div>
+      </div>
+      <div class="table-wrap">
+        <table><thead><tr><th>Cliente</th><th>Teléfono</th><th>Plan</th><th>Clases Usadas</th><th>Vence</th><th>Acciones</th></tr></thead>
+        <tbody id="tabla-vencimientos"></tbody></table>
+      </div>
+    </div>
+
+    <!-- ÚLTIMAS INSCRIPCIONES -->
     <div class="section">
       <div class="section-header"><div class="section-title">📋 ÚLTIMAS INSCRIPCIONES</div></div>
       <div class="table-wrap" id="ultimas-inscripciones"><div class="loading">Cargando...</div></div>
@@ -134,7 +180,7 @@
         <div class="tabs">
           <div class="tab active" onclick="filtrarClientes('todos', this)">Todos</div>
           <div class="tab" onclick="filtrarClientes('activo', this)">Activos</div>
-          <div class="tab" onclick="filtrarClientes('pendiente', this)">Pendientes</div>
+          <div class="tab" onclick="filtrarClientes('pendiente', this)">Pago Pendiente</div>
           <div class="tab" onclick="filtrarClientes('vencido', this)">Vencidos</div>
         </div>
         <div class="search-box"><span>🔍</span><input type="text" placeholder="Buscar cliente..." oninput="buscarCliente(this.value)"></div>
@@ -162,19 +208,21 @@
   <div class="modal">
     <div class="modal-header"><div class="modal-title">NUEVO CLIENTE</div><button class="modal-close" onclick="cerrarModal('modal-nuevo-cliente')">✕</button></div>
     <div class="modal-body">
+      <div class="info-box">Los clientes nuevos quedan en estado <strong>Pago Pendiente</strong> hasta que confirmés el pago manualmente.</div>
       <div class="form-group"><label class="form-label">Nombre completo</label><input type="text" class="form-input" id="nuevo-nombre" placeholder="Ej: Juan Pérez"></div>
       <div class="form-group"><label class="form-label">Teléfono</label><input type="text" class="form-input" id="nuevo-telefono" placeholder="Ej: 2604123456"></div>
       <div class="form-group"><label class="form-label">Email (opcional)</label><input type="email" class="form-input" id="nuevo-email" placeholder="Ej: juan@gmail.com"></div>
       <div class="form-group">
         <label class="form-label">Plan</label>
         <select class="form-select" id="nuevo-plan">
-          <option value="2 veces">2 veces por semana — $18.000 (8 clases)</option>
-          <option value="3 veces">3 veces por semana — $21.000 (12 clases)</option>
-          <option value="4 veces">4 veces por semana — $23.000 (16 clases)</option>
-          <option value="5 veces">5 veces por semana — $26.000 (20 clases)</option>
+          <option value="2 veces">2 veces por semana — $18.000 (8 clases/mes)</option>
+          <option value="3 veces">3 veces por semana — $21.000 (12 clases/mes)</option>
+          <option value="4 veces">4 veces por semana — $23.000 (16 clases/mes)</option>
+          <option value="5 veces">5 veces por semana — $26.000 (20 clases/mes)</option>
           <option value="pase libre">Pase Libre — $30.000 (ilimitado)</option>
         </select>
       </div>
+      <div class="form-group"><label class="form-label">Horario elegido</label><input type="text" class="form-input" id="nuevo-horario" placeholder="Ej: Lunes 19:30"></div>
     </div>
     <div class="modal-footer">
       <button class="btn btn-gray" onclick="cerrarModal('modal-nuevo-cliente')">Cancelar</button>
@@ -183,21 +231,101 @@
   </div>
 </div>
 
+<!-- MODAL CONFIRMAR PAGO -->
+<div class="modal-overlay" id="modal-confirmar-pago">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title">CONFIRMAR PAGO</div><button class="modal-close" onclick="cerrarModal('modal-confirmar-pago')">✕</button></div>
+    <div class="modal-body">
+      <div class="info-box" id="confirm-pago-info">—</div>
+      <div class="form-group">
+        <label class="form-label">Método de pago</label>
+        <select class="form-select" id="confirm-metodo">
+          <option value="mercadopago">MercadoPago</option>
+          <option value="efectivo">Efectivo</option>
+          <option value="transferencia">Transferencia</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Observaciones (opcional)</label>
+        <input type="text" class="form-input" id="confirm-obs" placeholder="Ej: Pagó en mano">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-gray" onclick="cerrarModal('modal-confirmar-pago')">Cancelar</button>
+      <button class="btn btn-green" onclick="ejecutarConfirmarPago()">✅ Confirmar Pago y Activar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL REGISTRAR CLASE -->
+<div class="modal-overlay" id="modal-clase">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title">REGISTRAR CLASE</div><button class="modal-close" onclick="cerrarModal('modal-clase')">✕</button></div>
+    <div class="modal-body">
+      <div class="info-box" id="clase-info">—</div>
+      <div class="form-group">
+        <label class="form-label">Fecha de la clase</label>
+        <input type="date" class="form-input" id="clase-fecha">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Horario</label>
+        <input type="text" class="form-input" id="clase-horario" placeholder="Ej: 19:30">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-gray" onclick="cerrarModal('modal-clase')">Cancelar</button>
+      <button class="btn btn-red" onclick="ejecutarRegistrarClase()">Registrar Clase</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL RENOVAR -->
+<div class="modal-overlay" id="modal-renovar">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title">RENOVAR MENSUALIDAD</div><button class="modal-close" onclick="cerrarModal('modal-renovar')">✕</button></div>
+    <div class="modal-body">
+      <div class="info-box" id="renovar-info">—</div>
+      <div class="form-group">
+        <label class="form-label">Nuevo plan (opcional, dejá igual si no cambia)</label>
+        <select class="form-select" id="renovar-plan">
+          <option value="">— Mantener plan actual —</option>
+          <option value="2 veces">2 veces por semana — $18.000</option>
+          <option value="3 veces">3 veces por semana — $21.000</option>
+          <option value="4 veces">4 veces por semana — $23.000</option>
+          <option value="5 veces">5 veces por semana — $26.000</option>
+          <option value="pase libre">Pase Libre — $30.000</option>
+        </select>
+      </div>
+      <div style="background:rgba(217,28,28,0.08);border:1px solid rgba(217,28,28,0.2);padding:14px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:1px;color:var(--light-gray);line-height:1.6;">
+        ⚠️ Al renovar, las <strong style="color:var(--white);">clases no usadas del mes anterior se pierden</strong>. El contador se reinicia desde cero.
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-gray" onclick="cerrarModal('modal-renovar')">Cancelar</button>
+      <button class="btn btn-yellow" onclick="ejecutarRenovar()">↺ Renovar y Notificar por WA</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
-  // ============================================================
-  // CONFIG — misma URL del Google Apps Script
-  // ============================================================
   const API = 'https://script.google.com/macros/s/AKfycbwM-yFN-XdsNHM_PM-3CarGijvmvBkYUORZknTrZo1M3fwRil-AuHdsSL4G4Ye7_er_/exec';
 
-  let todosLosClientes = [];
+  // ── Clases por plan ──────────────────────────────────────────
+  const CLASES_POR_PLAN = {
+    '2 veces': 8, '3 veces': 12, '4 veces': 16,
+    '5 veces': 20, 'pase libre': 999
+  };
 
+  let todosLosClientes = [];
+  let clienteSeleccionado = null;
+
+  // ── API helpers ──────────────────────────────────────────────
   async function apiGet(path) {
     const res = await fetch(`${API}?path=${path}`);
     return res.json();
   }
-
   async function apiPost(path, id, action, body) {
     let url = `${API}?path=${path}`;
     if (id) url += `&id=${id}`;
@@ -206,56 +334,115 @@
     return res.json();
   }
 
+  // ── Navegación ───────────────────────────────────────────────
   function showSection(name, el) {
-    document.querySelectorAll('.section-content').forEach(s => s.style.display = 'none');
+    document.querySelectorAll('.section-content').forEach(s => s.style.display='none');
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-    document.getElementById('section-' + name).style.display = 'block';
+    document.getElementById('section-'+name).style.display = 'block';
     el.classList.add('active');
-    if (name === 'dashboard') cargarDashboard();
-    if (name === 'clientes') cargarClientes();
-    if (name === 'horarios') cargarHorarios();
+    if (name==='dashboard') cargarDashboard();
+    if (name==='clientes') cargarClientes();
+    if (name==='horarios') cargarHorarios();
   }
 
+  // ── Dashboard ────────────────────────────────────────────────
   async function cargarDashboard() {
-    document.getElementById('fecha-hoy').textContent = new Date().toLocaleDateString('es-AR', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+    document.getElementById('fecha-hoy').textContent = new Date().toLocaleDateString('es-AR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
     const clientes = await fetchClientes();
-    const activos = clientes.filter(c => c.estado === 'activo').length;
-    const pendientes = clientes.filter(c => c.estado === 'pendiente').length;
-    const vencidos = clientes.filter(c => c.estado === 'vencido').length;
-    document.getElementById('stat-activos').textContent = activos;
-    document.getElementById('stat-pendientes').textContent = pendientes;
-    document.getElementById('stat-vencidos').textContent = vencidos;
-    document.getElementById('stat-total').textContent = clientes.length;
+    const hoy = new Date(); hoy.setHours(0,0,0,0);
 
-    const alertas = clientes.filter(c => c.estado !== 'activo');
-    if (alertas.length > 0) {
-      document.getElementById('alertas-section').style.display = 'block';
-      document.getElementById('tabla-alertas').innerHTML = alertas.map(c => `
-        <tr>
+    // Verificar vencimientos automáticos
+    verificarVencimientos(clientes, hoy);
+
+    const activos   = clientes.filter(c => c.estado==='activo').length;
+    const pendientes= clientes.filter(c => c.estado==='pendiente').length;
+    const vencidos  = clientes.filter(c => c.estado==='vencido').length;
+    document.getElementById('stat-activos').textContent    = activos;
+    document.getElementById('stat-pendientes').textContent = pendientes;
+    document.getElementById('stat-vencidos').textContent   = vencidos;
+    document.getElementById('stat-total').textContent      = clientes.length;
+
+    // Pendientes de pago
+    const pend = clientes.filter(c => c.estado==='pendiente');
+    if (pend.length > 0) {
+      document.getElementById('pendientes-section').style.display = 'block';
+      document.getElementById('tabla-pendientes').innerHTML = pend.map(c => `
+        <tr class="pendiente-row">
           <td><strong>${c.nombre}</strong></td>
           <td><a href="https://wa.me/54${c.telefono}" target="_blank" style="color:var(--green);text-decoration:none;">📱 ${c.telefono}</a></td>
-          <td>${c.plan||'—'}</td>
-          <td>${badgeEstado(c.estado)}</td>
-          <td style="color:var(--light-gray);font-size:13px;">${c.fecha_vencimiento||'—'}</td>
-          <td><button class="btn btn-red btn-sm" onclick="renovarCliente('${c.id}')">Renovar</button></td>
-        </tr>
-      `).join('');
+          <td style="font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;">${c.plan||'—'}</td>
+          <td style="color:var(--light-gray);font-size:13px;">${c.horario||'—'}</td>
+          <td style="color:var(--light-gray);font-size:12px;">${c.fecha_inscripcion||'—'}</td>
+          <td style="display:flex;gap:6px;flex-wrap:wrap;">
+            <button class="btn btn-green btn-sm" onclick="abrirConfirmarPago('${c.id}')">✅ Confirmar Pago</button>
+            <button class="btn btn-gray btn-sm" onclick="enviarRecordatorioWA('${c.id}')">📲 WA</button>
+          </td>
+        </tr>`).join('');
+    } else {
+      document.getElementById('pendientes-section').style.display = 'none';
     }
 
-    // Últimas inscripciones
-    const ultimas = clientes.slice(-5).reverse();
-    document.getElementById('ultimas-inscripciones').innerHTML = ultimas.length === 0
-      ? '<div class="empty-state"><div class="icon">📋</div><p>Sin clientes aún</p></div>'
-      : `<table><thead><tr><th>Nombre</th><th>Teléfono</th><th>Plan</th><th>Horario</th><th>Estado</th></tr></thead><tbody>${ultimas.map(c=>`
-        <tr>
+    // Vencimientos próximos (5 días)
+    const proximos = clientes.filter(c => {
+      if (c.estado !== 'activo' || !c.fecha_vencimiento) return false;
+      const vence = new Date(c.fecha_vencimiento); vence.setHours(0,0,0,0);
+      const diff = Math.ceil((vence - hoy) / (1000*60*60*24));
+      return diff >= 0 && diff <= 5;
+    });
+    if (proximos.length > 0) {
+      document.getElementById('vencimientos-section').style.display = 'block';
+      document.getElementById('tabla-vencimientos').innerHTML = proximos.map(c => {
+        const vence = new Date(c.fecha_vencimiento); vence.setHours(0,0,0,0);
+        const dias = Math.ceil((vence - hoy) / (1000*60*60*24));
+        return `<tr>
           <td><strong>${c.nombre}</strong></td>
           <td><a href="https://wa.me/54${c.telefono}" target="_blank" style="color:var(--green);text-decoration:none;">📱 ${c.telefono}</a></td>
           <td>${c.plan||'—'}</td>
-          <td style="color:var(--light-gray);font-size:13px;">${c.horario||'—'}</td>
-          <td>${badgeEstado(c.estado)}</td>
-        </tr>`).join('')}</tbody></table>`;
+          <td>${renderClasesBar(c)}</td>
+          <td style="color:${dias<=2?'var(--red)':'var(--orange)'};">
+            ${c.fecha_vencimiento} <strong>(${dias===0?'HOY':dias===1?'MAÑANA':dias+' días'})</strong>
+          </td>
+          <td style="display:flex;gap:6px;flex-wrap:wrap;">
+            <button class="btn btn-yellow btn-sm" onclick="abrirRenovar('${c.id}')">↺ Renovar</button>
+            <button class="btn btn-gray btn-sm" onclick="notificarVencimientoWA('${c.id}')">📲 Avisar</button>
+          </td>
+        </tr>`;
+      }).join('');
+    } else {
+      document.getElementById('vencimientos-section').style.display = 'none';
+    }
+
+    // Últimas 5
+    const ultimas = [...clientes].reverse().slice(0,5);
+    document.getElementById('ultimas-inscripciones').innerHTML = ultimas.length===0
+      ? '<div class="empty-state"><div class="icon">📋</div><p>Sin clientes aún</p></div>'
+      : `<table><thead><tr><th>Nombre</th><th>Teléfono</th><th>Plan</th><th>Clases</th><th>Estado</th><th>Acciones</th></tr></thead><tbody>
+          ${ultimas.map(c=>`<tr>
+            <td><strong>${c.nombre}</strong></td>
+            <td><a href="https://wa.me/54${c.telefono}" target="_blank" style="color:var(--green);text-decoration:none;">📱 ${c.telefono}</a></td>
+            <td>${c.plan||'—'}</td>
+            <td>${renderClasesBar(c)}</td>
+            <td>${badgeEstado(c.estado)}</td>
+            <td>${accionesPorEstado(c)}</td>
+          </tr>`).join('')}
+        </tbody></table>`;
   }
 
+  // ── Verificar vencimientos automáticos ──────────────────────
+  function verificarVencimientos(clientes, hoy) {
+    clientes.forEach(c => {
+      if (c.estado === 'activo' && c.fecha_vencimiento) {
+        const vence = new Date(c.fecha_vencimiento); vence.setHours(0,0,0,0);
+        if (vence < hoy) {
+          // Marcar como vencido en la API silenciosamente
+          apiPost('clientes', c.id, 'vencer', {}).catch(()=>{});
+          c.estado = 'vencido';
+        }
+      }
+    });
+  }
+
+  // ── Clientes ─────────────────────────────────────────────────
   async function fetchClientes() {
     try { todosLosClientes = await apiGet('clientes'); return todosLosClientes; }
     catch(e) { return []; }
@@ -269,38 +456,218 @@
 
   function renderTablaClientes(clientes) {
     const wrap = document.getElementById('tabla-clientes-wrap');
-    if (clientes.length === 0) { wrap.innerHTML = `<div class="empty-state"><div class="icon">👥</div><p>No hay clientes todavía</p></div>`; return; }
-    wrap.innerHTML = `<table><thead><tr><th>Nombre</th><th>Teléfono</th><th>Plan</th><th>Horario</th><th>Estado</th><th>Vence</th><th>Acciones</th></tr></thead><tbody>
+    if (clientes.length===0) { wrap.innerHTML=`<div class="empty-state"><div class="icon">👥</div><p>No hay clientes todavía</p></div>`; return; }
+    wrap.innerHTML = `<table><thead><tr><th>Nombre</th><th>Teléfono</th><th>Plan</th><th>Horario</th><th>Clases</th><th>Estado</th><th>Vence</th><th>Acciones</th></tr></thead><tbody>
       ${clientes.map(c => {
-        const diasRestantes = c.fecha_vencimiento ? Math.ceil((new Date(c.fecha_vencimiento) - new Date()) / (1000*60*60*24)) : 0;
-        return `<tr>
+        const hoy = new Date(); hoy.setHours(0,0,0,0);
+        const vence = c.fecha_vencimiento ? new Date(c.fecha_vencimiento) : null;
+        if (vence) vence.setHours(0,0,0,0);
+        const dias = vence ? Math.ceil((vence-hoy)/(1000*60*60*24)) : null;
+        return `<tr${c.estado==='pendiente'?' class="pendiente-row"':''}>
           <td><strong>${c.nombre}</strong></td>
           <td><a href="https://wa.me/54${c.telefono}" target="_blank" style="color:var(--green);text-decoration:none;">📱 ${c.telefono}</a></td>
-          <td style="font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;">${c.plan||'—'}</td>
+          <td style="font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;font-size:13px;">${c.plan||'—'}</td>
           <td style="color:var(--light-gray);font-size:13px;">${c.horario||'—'}</td>
+          <td>${renderClasesBar(c)}</td>
           <td>${badgeEstado(c.estado)}</td>
-          <td style="font-size:13px;color:${diasRestantes<=5?'var(--orange)':'var(--light-gray)'};">${c.fecha_vencimiento?`${c.fecha_vencimiento} ${diasRestantes>0?`(${diasRestantes}d)`:''}` :'—'}</td>
-          <td style="display:flex;gap:6px;flex-wrap:wrap;">
-            <button class="btn btn-red btn-sm" onclick="renovarCliente('${c.id}')">Renovar</button>
-            <button class="btn btn-gray btn-sm" onclick="eliminarCliente('${c.id}','${c.nombre}')">✕</button>
+          <td style="font-size:12px;color:${dias!==null&&dias<=3?'var(--orange)':'var(--light-gray)'};">
+            ${c.fecha_vencimiento||'—'}${dias!==null?` <span style="color:${dias<=0?'var(--red)':dias<=3?'var(--orange)':'var(--light-gray)'};">(${dias<=0?'VENCIÓ':dias+'d'})</span>`:''}
           </td>
+          <td>${accionesPorEstado(c)}</td>
         </tr>`;
       }).join('')}
     </tbody></table>`;
   }
 
+  function accionesPorEstado(c) {
+    if (c.estado === 'pendiente') {
+      return `<div style="display:flex;gap:4px;flex-wrap:wrap;">
+        <button class="btn btn-green btn-xs" onclick="abrirConfirmarPago('${c.id}')">✅ Pago</button>
+        <button class="btn btn-gray btn-xs" onclick="eliminarCliente('${c.id}','${c.nombre}')">✕</button>
+      </div>`;
+    }
+    if (c.estado === 'activo') {
+      return `<div style="display:flex;gap:4px;flex-wrap:wrap;">
+        <button class="btn btn-gray btn-xs" onclick="abrirRegistrarClase('${c.id}')">+ Clase</button>
+        <button class="btn btn-yellow btn-xs" onclick="abrirRenovar('${c.id}')">↺</button>
+        <button class="btn btn-gray btn-xs" onclick="eliminarCliente('${c.id}','${c.nombre}')">✕</button>
+      </div>`;
+    }
+    if (c.estado === 'vencido') {
+      return `<div style="display:flex;gap:4px;flex-wrap:wrap;">
+        <button class="btn btn-yellow btn-xs" onclick="abrirRenovar('${c.id}')">↺ Renovar</button>
+        <button class="btn btn-gray btn-xs" onclick="eliminarCliente('${c.id}','${c.nombre}')">✕</button>
+      </div>`;
+    }
+    return `<button class="btn btn-gray btn-xs" onclick="eliminarCliente('${c.id}','${c.nombre}')">✕</button>`;
+  }
+
+  // Barra visual de clases
+  function renderClasesBar(c) {
+    if (c.plan === 'pase libre') return `<span style="font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:1px;color:var(--green);">ILIMITADO</span>`;
+    const total = CLASES_POR_PLAN[c.plan] || 0;
+    if (!total) return '—';
+    const usadas = parseInt(c.clases_usadas)||0;
+    const restantes = Math.max(0, total - usadas);
+    let dots = '';
+    for (let i=0; i<total; i++) {
+      dots += `<div class="dot ${i<usadas?'used':'available'}"></div>`;
+    }
+    return `<div class="clases-bar"><div class="clases-dots">${dots}</div><span class="clases-text">${restantes}/${total}</span></div>`;
+  }
+
   function filtrarClientes(estado, el) {
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
     el.classList.add('active');
-    const filtrados = estado === 'todos' ? todosLosClientes : todosLosClientes.filter(c => c.estado === estado);
+    const filtrados = estado==='todos' ? todosLosClientes : todosLosClientes.filter(c=>c.estado===estado);
     renderTablaClientes(filtrados);
   }
 
   function buscarCliente(query) {
     const q = query.toLowerCase();
-    renderTablaClientes(todosLosClientes.filter(c => c.nombre.toLowerCase().includes(q) || (c.telefono||'').includes(q)));
+    renderTablaClientes(todosLosClientes.filter(c=>c.nombre.toLowerCase().includes(q)||(c.telefono||'').includes(q)));
   }
 
+  // ── CONFIRMAR PAGO ───────────────────────────────────────────
+  function abrirConfirmarPago(id) {
+    clienteSeleccionado = todosLosClientes.find(c=>c.id===id);
+    if (!clienteSeleccionado) return;
+    const total = CLASES_POR_PLAN[clienteSeleccionado.plan] || '?';
+    document.getElementById('confirm-pago-info').innerHTML =
+      `<strong>${clienteSeleccionado.nombre}</strong> — Plan: <strong>${clienteSeleccionado.plan||'—'}</strong><br>
+       Al confirmar el pago, el cliente queda <strong style="color:var(--green);">ACTIVO</strong> con <strong>${total} clases</strong> y se activan 30 días de membresía.`;
+    document.getElementById('confirm-obs').value = '';
+    document.getElementById('modal-confirmar-pago').classList.add('open');
+  }
+
+  async function ejecutarConfirmarPago() {
+    if (!clienteSeleccionado) return;
+    const metodo = document.getElementById('confirm-metodo').value;
+    const obs = document.getElementById('confirm-obs').value.trim();
+    const fechaInicio = new Date();
+    const fechaVence = new Date(); fechaVence.setDate(fechaVence.getDate()+30);
+    try {
+      await apiPost('clientes', clienteSeleccionado.id, 'confirmar_pago', {
+        metodo_pago: metodo,
+        observaciones: obs,
+        fecha_inicio: fechaInicio.toISOString().split('T')[0],
+        fecha_vencimiento: fechaVence.toISOString().split('T')[0],
+        clases_usadas: 0
+      });
+      cerrarModal('modal-confirmar-pago');
+      showToast(`✅ Pago confirmado — ${clienteSeleccionado.nombre} activado por 30 días`);
+      // Notificar por WhatsApp
+      const msg = encodeURIComponent(
+        `✅ *PAGO CONFIRMADO — DANGER FITNESS*\n\n` +
+        `Hola ${clienteSeleccionado.nombre.split(' ')[0]}! Tu inscripción fue confirmada 🎉\n\n` +
+        `📋 *Plan:* ${clienteSeleccionado.plan}\n` +
+        `📅 *Horario:* ${clienteSeleccionado.horario||'—'}\n` +
+        `📆 *Válido hasta:* ${fechaVence.toLocaleDateString('es-AR')}\n\n` +
+        `¡Te esperamos en Danger Fitness! 💪`
+      );
+      window.open(`https://wa.me/54${clienteSeleccionado.telefono}?text=${msg}`, '_blank');
+      cargarDashboard(); cargarClientes();
+    } catch(e) { showToast('Error al confirmar pago', true); }
+  }
+
+  // ── REGISTRAR CLASE ──────────────────────────────────────────
+  function abrirRegistrarClase(id) {
+    clienteSeleccionado = todosLosClientes.find(c=>c.id===id);
+    if (!clienteSeleccionado) return;
+    const usadas = parseInt(clienteSeleccionado.clases_usadas)||0;
+    const total = CLASES_POR_PLAN[clienteSeleccionado.plan]||0;
+    const restantes = Math.max(0, total-usadas);
+    document.getElementById('clase-info').innerHTML =
+      `<strong>${clienteSeleccionado.nombre}</strong> — Plan: <strong>${clienteSeleccionado.plan}</strong><br>
+       Clases usadas: <strong>${usadas}/${total}</strong> — Restantes: <strong style="color:${restantes<=2?'var(--orange)':'var(--green)'};">${restantes}</strong>`;
+    document.getElementById('clase-fecha').value = new Date().toISOString().split('T')[0];
+    document.getElementById('clase-horario').value = clienteSeleccionado.horario||'';
+    document.getElementById('modal-clase').classList.add('open');
+  }
+
+  async function ejecutarRegistrarClase() {
+    if (!clienteSeleccionado) return;
+    const fecha = document.getElementById('clase-fecha').value;
+    const horario = document.getElementById('clase-horario').value;
+    const usadas = (parseInt(clienteSeleccionado.clases_usadas)||0) + 1;
+    const total = CLASES_POR_PLAN[clienteSeleccionado.plan]||0;
+    try {
+      await apiPost('clientes', clienteSeleccionado.id, 'registrar_clase', { clases_usadas: usadas, fecha_clase: fecha, horario_clase: horario });
+      cerrarModal('modal-clase');
+      showToast(`📌 Clase registrada — ${clienteSeleccionado.nombre} (${usadas}/${total})`);
+      if (total > 0 && usadas >= total) showToast(`⚠️ ${clienteSeleccionado.nombre} usó todas sus clases del mes`);
+      cargarClientes(); cargarDashboard();
+    } catch(e) { showToast('Error al registrar clase', true); }
+  }
+
+  // ── RENOVAR ──────────────────────────────────────────────────
+  function abrirRenovar(id) {
+    clienteSeleccionado = todosLosClientes.find(c=>c.id===id);
+    if (!clienteSeleccionado) return;
+    const usadas = parseInt(clienteSeleccionado.clases_usadas)||0;
+    const total = CLASES_POR_PLAN[clienteSeleccionado.plan]||0;
+    const perdidas = Math.max(0, total-usadas);
+    document.getElementById('renovar-info').innerHTML =
+      `<strong>${clienteSeleccionado.nombre}</strong> — Plan actual: <strong>${clienteSeleccionado.plan||'—'}</strong><br>` +
+      (perdidas > 0 && clienteSeleccionado.plan !== 'pase libre'
+        ? `Clases no usadas este mes: <strong style="color:var(--orange);">${perdidas} se perderán</strong>`
+        : `Clases usadas: <strong>${usadas}/${total}</strong>`);
+    document.getElementById('renovar-plan').value = '';
+    document.getElementById('modal-renovar').classList.add('open');
+  }
+
+  async function ejecutarRenovar() {
+    if (!clienteSeleccionado) return;
+    const nuevoPlan = document.getElementById('renovar-plan').value || clienteSeleccionado.plan;
+    const fechaVence = new Date(); fechaVence.setDate(fechaVence.getDate()+30);
+    try {
+      await apiPost('clientes', clienteSeleccionado.id, 'renovar', {
+        plan: nuevoPlan,
+        fecha_vencimiento: fechaVence.toISOString().split('T')[0],
+        clases_usadas: 0
+      });
+      cerrarModal('modal-renovar');
+      showToast(`✅ ${clienteSeleccionado.nombre} renovado — clases reiniciadas`);
+      // Notificar por WA
+      const msg = encodeURIComponent(
+        `🔄 *MEMBRESÍA RENOVADA — DANGER FITNESS*\n\n` +
+        `Hola ${clienteSeleccionado.nombre.split(' ')[0]}! Tu membresía fue renovada ✅\n\n` +
+        `📋 *Plan:* ${nuevoPlan}\n` +
+        `📆 *Válido hasta:* ${fechaVence.toLocaleDateString('es-AR')}\n\n` +
+        `¡Seguimos entrenando fuerte! 💪`
+      );
+      window.open(`https://wa.me/54${clienteSeleccionado.telefono}?text=${msg}`, '_blank');
+      cargarDashboard(); cargarClientes();
+    } catch(e) { showToast('Error al renovar', true); }
+  }
+
+  // ── NOTIFICACIONES WA ────────────────────────────────────────
+  function enviarRecordatorioWA(id) {
+    const c = todosLosClientes.find(x=>x.id===id);
+    if (!c) return;
+    const msg = encodeURIComponent(
+      `📲 *DANGER FITNESS — Recordatorio de Pago*\n\n` +
+      `Hola ${c.nombre.split(' ')[0]}! Te recordamos que tu pago de la membresía está pendiente 💳\n\n` +
+      `📋 *Plan:* ${c.plan||'—'}\n` +
+      `Si ya pagaste, ignorá este mensaje. Cualquier duda escribinos.\n\n` +
+      `¡Gracias! 🙌`
+    );
+    window.open(`https://wa.me/54${c.telefono}?text=${msg}`, '_blank');
+  }
+
+  function notificarVencimientoWA(id) {
+    const c = todosLosClientes.find(x=>x.id===id);
+    if (!c) return;
+    const msg = encodeURIComponent(
+      `⏰ *DANGER FITNESS — Tu membresía vence pronto*\n\n` +
+      `Hola ${c.nombre.split(' ')[0]}! Tu membresía vence el *${c.fecha_vencimiento}* 📅\n\n` +
+      `📋 *Plan actual:* ${c.plan||'—'}\n\n` +
+      `¿Renovamos? Escribinos o pasate por el gym para no perder tu lugar 💪`
+    );
+    window.open(`https://wa.me/54${c.telefono}?text=${msg}`, '_blank');
+  }
+
+  // ── NUEVO CLIENTE ────────────────────────────────────────────
   function abrirModalNuevoCliente() { document.getElementById('modal-nuevo-cliente').classList.add('open'); }
   function cerrarModal(id) { document.getElementById(id).classList.remove('open'); }
 
@@ -309,27 +676,15 @@
     const telefono = document.getElementById('nuevo-telefono').value.trim();
     const email = document.getElementById('nuevo-email').value.trim();
     const plan = document.getElementById('nuevo-plan').value;
+    const horario = document.getElementById('nuevo-horario').value.trim();
     if (!nombre || !telefono) { showToast('Completá nombre y teléfono', true); return; }
     try {
-      const data = await apiPost('clientes', null, null, { nombre, telefono, email, plan });
-      if (data.error) throw new Error(data.error);
+      await apiPost('clientes', null, null, { nombre, telefono, email, plan, horario, estado:'pendiente', clases_usadas:0 });
       cerrarModal('modal-nuevo-cliente');
-      document.getElementById('nuevo-nombre').value = '';
-      document.getElementById('nuevo-telefono').value = '';
-      document.getElementById('nuevo-email').value = '';
-      showToast(`✅ ${nombre} agregado correctamente`);
-      cargarClientes();
+      ['nuevo-nombre','nuevo-telefono','nuevo-email','nuevo-horario'].forEach(id=>document.getElementById(id).value='');
+      showToast(`✅ ${nombre} agregado — estado: Pago Pendiente`);
+      cargarClientes(); cargarDashboard();
     } catch(e) { showToast('Error al crear cliente', true); }
-  }
-
-  async function renovarCliente(id) {
-    const cliente = todosLosClientes.find(c => c.id === id);
-    if (!cliente) return;
-    try {
-      await apiPost('clientes', id, 'renovar', {});
-      showToast(`✅ ${cliente.nombre} renovado por 30 días`);
-      cargarDashboard(); cargarClientes();
-    } catch(e) { showToast('Error al renovar', true); }
   }
 
   async function eliminarCliente(id, nombre) {
@@ -337,10 +692,11 @@
     try {
       await apiPost('clientes', id, 'delete', {});
       showToast(`${nombre} eliminado`);
-      cargarClientes();
+      cargarClientes(); cargarDashboard();
     } catch(e) { showToast('Error al eliminar', true); }
   }
 
+  // ── HORARIOS ─────────────────────────────────────────────────
   async function cargarHorarios() {
     const contenido = document.getElementById('horarios-contenido');
     contenido.innerHTML = '<div class="loading">Cargando horarios...</div>';
@@ -349,20 +705,19 @@
       const dias = ['Lunes','Martes','Miércoles','Jueves','Viernes'];
       let html = '';
       dias.forEach(dia => {
-        const del_dia = horarios.filter(h => h.dia === dia);
+        const del_dia = horarios.filter(h=>h.dia===dia);
         if (!del_dia.length) return;
-        html += `<div style="padding:20px 24px;">
+        html += `<div style="padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.04);">
           <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--red);margin-bottom:12px;">${dia}</div>
           <div style="display:flex;flex-wrap:wrap;gap:10px;">
             ${del_dia.map(h=>`
-              <div style="background:var(--gray);padding:16px;text-align:center;min-width:130px;opacity:${h.cupo_disponible==0?'0.5':'1'}">
+              <div style="background:var(--gray);padding:16px;text-align:center;min-width:130px;opacity:${h.cupo_disponible==0?'0.5':'1'};">
                 <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;color:${h.cupo_disponible==0?'var(--red)':'var(--white)'};">${h.hora}</div>
                 <div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;margin-top:8px;color:${h.cupo_disponible==0?'var(--red)':h.cupo_disponible<=2?'var(--orange)':'var(--green)'};">
                   ${h.cupo_disponible==0?'COMPLETO':`${h.cupo_disponible}/${h.cupo_total} lugares`}
                 </div>
                 <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:2px;color:var(--light-gray);text-transform:uppercase;margin-top:4px;">${h.tipo||''}</div>
-              </div>
-            `).join('')}
+              </div>`).join('')}
           </div>
         </div>`;
       });
@@ -372,18 +727,25 @@
     }
   }
 
+  // ── Helpers ──────────────────────────────────────────────────
   function badgeEstado(estado) {
-    const map = { 'activo':'<span class="badge badge-green">Activo</span>', 'pendiente':'<span class="badge badge-yellow">Pendiente</span>', 'vencido':'<span class="badge badge-red">Vencido</span>', 'baja':'<span class="badge badge-orange">Baja</span>' };
-    return map[estado] || `<span class="badge">${estado}</span>`;
+    const map = {
+      'activo':'<span class="badge badge-green">Activo</span>',
+      'pendiente':'<span class="badge badge-yellow">Pago Pendiente</span>',
+      'vencido':'<span class="badge badge-red">Vencido</span>',
+      'baja':'<span class="badge badge-orange">Baja</span>'
+    };
+    return map[estado]||`<span class="badge">${estado}</span>`;
   }
 
   function showToast(msg, error=false) {
     const t = document.getElementById('toast');
     t.textContent = msg;
-    t.className = 'toast show' + (error?' error':'');
-    setTimeout(() => t.className = 'toast', 3000);
+    t.className = 'toast show'+(error?' error':'');
+    setTimeout(()=>t.className='toast', 3500);
   }
 
+  // ── Init ─────────────────────────────────────────────────────
   cargarDashboard();
 </script>
 </body>
