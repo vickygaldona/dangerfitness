@@ -408,27 +408,43 @@
     <div class="nutricion-visual reveal">
       <div style="position:relative;">
         <!-- Foto de la nutricionista -->
-        <div style="position:relative;overflow:hidden;">
-          <img src="./foto.jpg" alt="Lic. Carolina García — Nutricionista" style="width:100%;height:420px;object-fit:cover;object-position:center top;display:block;filter:brightness(0.88) contrast(1.05);">
+        <div style="position:relative;overflow:hidden;line-height:0;">
+          <img src="./foto.jpg" alt="Lic. Carolina García — Nutricionista"
+               style="width:100%;height:480px;object-fit:cover;object-position:center 20%;display:block;filter:brightness(0.92) contrast(1.05);">
           <!-- Overlay degradado inferior -->
-          <div style="position:absolute;bottom:0;left:0;right:0;height:55%;background:linear-gradient(to top,rgba(10,10,10,0.95) 0%,transparent 100%);"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(to top,rgba(10,10,10,1) 0%,rgba(10,10,10,0.6) 50%,transparent 100%);"></div>
           <!-- Badge rojo superior -->
-          <div style="position:absolute;top:16px;left:16px;background:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;padding:5px 16px;color:var(--white);">Servicio Premium</div>
-        </div>
-        <!-- Info sobre la foto -->
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:24px 28px;">
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:2px;color:var(--white);line-height:1;">LIC. CAROLINA<br>GARCÍA</div>
-          <div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:3px;color:rgba(255,255,255,0.7);text-transform:uppercase;margin:6px 0 16px;">Licenciada en Nutrición</div>
-          <a href="https://wa.me/542604840322" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:var(--red);padding:12px 20px;text-decoration:none;">
-            <span style="font-size:18px;">📱</span>
-            <div>
-              <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:3px;color:rgba(255,255,255,0.7);text-transform:uppercase;">WhatsApp</div>
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:var(--white);">2604 840322</div>
-            </div>
+          <div style="position:absolute;top:20px;left:20px;background:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;padding:6px 18px;color:var(--white);">✦ Nutrición Profesional</div>
+          <!-- Link Instagram arriba derecha -->
+          <a href="https://www.instagram.com/dangerfitness_nutricion" target="_blank"
+             style="position:absolute;top:20px;right:20px;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.15);color:var(--white);text-decoration:none;padding:7px 14px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:background 0.2s;"
+             onmouseover="this.style.background='var(--red)'" onmouseout="this.style.background='rgba(0,0,0,0.5)'">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            @dangerfitness
           </a>
         </div>
+        <!-- Info sobre la foto -->
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:2px;color:var(--white);line-height:1;">LIC. CAROLINA<br>GARCÍA</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:3px;color:rgba(255,255,255,0.6);text-transform:uppercase;margin:6px 0 18px;">Licenciada en Nutrición</div>
+          <!-- Botones acción -->
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <a href="https://wa.me/542604840322" target="_blank"
+               style="display:inline-flex;align-items:center;gap:8px;background:var(--red);padding:11px 18px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--white);transition:background 0.2s;"
+               onmouseover="this.style.background='var(--red-dark)'" onmouseout="this.style.background='var(--red)'">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+            <a href="https://nutricarolinagarcia.netlify.app" target="_blank"
+               style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);padding:11px 18px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--white);transition:background 0.2s,border-color 0.2s;"
+               onmouseover="this.style.background='rgba(255,255,255,0.15)';this.style.borderColor='rgba(255,255,255,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.borderColor='rgba(255,255,255,0.2)'">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+              Ver su web
+            </a>
+          </div>
+        </div>
         <!-- Marco decorativo -->
-        <div style="position:absolute;top:-10px;left:-10px;right:10px;bottom:10px;border:2px solid rgba(217,28,28,0.25);pointer-events:none;z-index:0;"></div>
+        <div style="position:absolute;top:-10px;left:-10px;right:10px;bottom:10px;border:2px solid rgba(217,28,28,0.2);pointer-events:none;z-index:0;"></div>
       </div>
     </div>
     <div class="nutricion-content reveal">
@@ -443,6 +459,10 @@
         <div class="nutricion-feature"><div class="feature-dot"></div><div class="feature-text">Consultá disponibilidad de turnos directamente</div></div>
       </div>
       <a href="https://wa.me/542604840322" target="_blank" class="nutricion-cta">📅 Sacar Turno con Nutricionista</a>
+      <a href="https://nutricarolinagarcia.netlify.app" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:var(--light-gray);transition:color 0.2s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--light-gray)'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+        Ver sitio web de la nutricionista →
+      </a>
     </div>
   </div>
 </section>
@@ -478,6 +498,15 @@
         <div class="contacto-icon">🥗</div>
         <div><div class="contacto-info-label">Lic. Carolina García (Nutrición)</div><div class="contacto-info-value">2604 840322</div></div>
       </div>
+      <div class="contacto-info-item">
+        <div class="contacto-icon" style="font-size:16px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+        </div>
+        <div>
+          <div class="contacto-info-label">Instagram</div>
+          <a href="https://www.instagram.com/dangerfitness_nutricion" target="_blank" style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:1px;color:var(--white);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--white)'">@dangerfitness_nutricion</a>
+        </div>
+      </div>
       <div style="display:flex;gap:12px;margin-top:8px;">
         <a href="https://wa.me/542604332762" target="_blank" class="btn-primary" style="font-size:13px;">WhatsApp Profe</a>
         <a href="https://wa.me/542604840322" target="_blank" class="btn-secondary" style="font-size:13px;">WhatsApp Nutrición</a>
@@ -504,9 +533,12 @@
   <div class="footer-brand">DANGER <span>FITNESS</span></div>
   <div class="footer-copy">© 2025 Danger Fitness y Nutrición · Fleming 758</div>
   <div class="footer-social">
-    <a href="#" class="social-link">📘</a>
-    <a href="#" class="social-link">📸</a>
-    <a href="https://wa.me/542604332762" class="social-link">💬</a>
+    <a href="https://www.instagram.com/dangerfitness_nutricion" target="_blank" class="social-link" title="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="https://wa.me/542604332762" target="_blank" class="social-link" title="WhatsApp">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
   </div>
 </footer>
 
