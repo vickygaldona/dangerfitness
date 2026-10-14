@@ -3,8 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Danger Fitness y Nutrición</title>
+<title>Danger Fitness y Nutrición — Gimnasio en San Rafael, Mendoza</title>
+<meta name="description" content="Entrenamiento funcional, G.A.P., zumba y baile para niñas en San Rafael, Mendoza. Reservá tu turno online y sumá asesoría nutricional con la Lic. Carolina García. Fleming 758.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Danger Fitness y Nutrición — San Rafael, Mendoza">
+<meta property="og:description" content="Funcional, G.A.P., zumba y baile para niñas. Reservá tu turno online. Fleming 758.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0a0a'/%3E%3Cpath d='M50 18 Q74 50 50 82 Q26 50 50 18Z' fill='%23D91C1C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ExerciseGym","name":"Danger Fitness y Nutrición","address":{"@type":"PostalAddress","streetAddress":"Fleming 758","addressLocality":"San Rafael","addressRegion":"Mendoza","postalCode":"M5602","addressCountry":"AR"},"telephone":"+542604332762","geo":{"@type":"GeoCoordinates","latitude":-34.5967988,"longitude":-68.3311521},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"21:00"}],"sameAs":["https://www.instagram.com/dangerfitness_nutricion"]}
+</script>
+<script>document.documentElement.classList.add('js');</script>
 <style>
   :root {
     --red: #D91C1C;
@@ -13,212 +26,299 @@
     --dark: #111111;
     --dark2: #1a1a1a;
     --gray: #2a2a2a;
-    --light-gray: #888;
+    --light-gray: #999;
     --white: #ffffff;
     --off-white: #f0f0f0;
+    --green: #22c55e;
+    --orange: #f97316;
+    --nav-h: 73px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
   body { font-family: 'Barlow', sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
+  button { font: inherit; color: inherit; }
+  img { max-width: 100%; }
+  :focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .skip-link { position: absolute; left: 12px; top: -60px; background: var(--red); color: var(--white); padding: 10px 18px; z-index: 11000; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
+  .skip-link:focus { top: 12px; }
 
   body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
+    content: ''; position: fixed; inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.4;
+    pointer-events: none; z-index: 900; opacity: 0.4;
   }
 
-  nav {
-    position: fixed; top: 0; width: 100%; z-index: 1000;
-    padding: 16px 40px; display: flex; align-items: center; justify-content: space-between;
-    background: rgba(10,10,10,0.92); backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(217,28,28,0.2);
-  }
+  /* ===== NAV ===== */
+  nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between; background: rgba(10,10,10,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(217,28,28,0.2); transition: border-color .3s; }
+  nav.scrolled { border-bottom-color: rgba(217,28,28,0.4); }
   .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
   .nav-logo-icon { width: 42px; height: 42px; }
   .nav-brand { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--white); letter-spacing: 2px; line-height: 1.1; }
   .nav-brand span { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 4px; color: var(--light-gray); }
-  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
   .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--light-gray); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--red); }
-  .nav-cta { background: var(--red); color: var(--white) !important; padding: 8px 20px; font-size: 13px !important; transition: background 0.2s !important; }
-  .nav-cta:hover { background: var(--red-dark) !important; }
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-  .hamburger span { display: block; width: 26px; height: 2px; background: var(--white); transition: all 0.3s; }
-  .mobile-menu { display: none; position: fixed; top: 73px; left: 0; width: 100%; background: rgba(10,10,10,0.98); padding: 24px 40px; border-bottom: 1px solid rgba(217,28,28,0.3); z-index: 999; }
+  .nav-links a.nav-cta { background: var(--red); color: var(--white); padding: 8px 20px; font-size: 13px; }
+  .nav-links a.nav-cta:hover { background: var(--red-dark); color: var(--white); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: 0; }
+  .hamburger span { display: block; width: 26px; height: 2px; background: var(--white); transition: transform .3s, opacity .3s; }
+  .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu { display: none; position: fixed; top: var(--nav-h); left: 0; width: 100%; background: rgba(10,10,10,0.98); padding: 24px 40px; border-bottom: 1px solid rgba(217,28,28,0.3); z-index: 999; }
   .mobile-menu.open { display: block; }
   .mobile-menu a { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--off-white); text-decoration: none; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.2s; }
   .mobile-menu a:hover { color: var(--red); }
+  .mobile-menu a.accent { color: var(--red); }
 
-  .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: 73px; }
+  /* ===== HERO ===== */
+  .hero { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: var(--nav-h); }
   .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(217,28,28,0.12) 0%, transparent 60%), linear-gradient(to bottom, #0a0a0a 0%, #111 50%, #0a0a0a 100%); }
   .hero-lines { position: absolute; inset: 0; background-image: repeating-linear-gradient(-55deg, transparent, transparent 60px, rgba(217,28,28,0.03) 60px, rgba(217,28,28,0.03) 61px); }
   .hero-content { position: relative; z-index: 2; text-align: center; padding: 40px 20px; max-width: 900px; }
   .hero-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 6px; color: var(--red); text-transform: uppercase; margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards; }
-  .hero-logo-img { width: 110px; margin: 0 auto 24px; opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; }
-  .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(72px, 15vw, 160px); line-height: 0.9; letter-spacing: 4px; color: var(--white); opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards; }
+  .hero-logo-img { width: 110px; height: 110px; margin: 0 auto 24px; display: block; opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; }
+  .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(72px, 15vw, 160px); font-weight: 400; line-height: 0.9; letter-spacing: 4px; color: var(--white); opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards; }
   .hero-title .accent { color: var(--red); display: block; }
   .hero-subtitle { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(16px, 3vw, 22px); font-weight: 400; letter-spacing: 5px; color: var(--light-gray); text-transform: uppercase; margin-top: 16px; opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards; }
   .hero-slash { width: 80px; height: 4px; background: var(--red); margin: 28px auto; opacity: 0; animation: fadeUp 0.8s ease 0.6s forwards; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); }
   .hero-tagline { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(20px, 4vw, 28px); font-weight: 600; letter-spacing: 2px; color: var(--off-white); text-transform: uppercase; opacity: 0; animation: fadeUp 0.8s ease 0.7s forwards; }
   .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 40px; opacity: 0; animation: fadeUp 0.8s ease 0.8s forwards; }
-  .btn-primary { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--red); padding: 16px 36px; clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%); transition: background 0.2s, transform 0.2s; }
+  .btn-primary { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--red); padding: 16px 36px; clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%); transition: background 0.2s, transform 0.2s; }
   .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); }
-  .btn-secondary { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; color: var(--white); border: 2px solid rgba(255,255,255,0.3); padding: 14px 34px; clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%); transition: border-color 0.2s, transform 0.2s; }
+  .btn-secondary { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; color: var(--white); border: 2px solid rgba(255,255,255,0.3); padding: 14px 34px; clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%); transition: border-color 0.2s, transform 0.2s; }
   .btn-secondary:hover { border-color: var(--red); transform: translateY(-2px); }
+  .btn-sm { font-size: 13px; }
   .hero-scroll { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0; animation: fadeUp 0.8s ease 1.2s forwards; }
   .hero-scroll span { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 4px; color: var(--light-gray); text-transform: uppercase; }
   .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--red), transparent); animation: pulse 1.5s ease infinite; }
 
-  .stats-bar { background: var(--red); padding: 20px 40px; display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; clip-path: polygon(0 0, 100% 0, 100% 70%, 99% 100%, 1% 100%, 0% 70%); padding-bottom: 36px; }
+  /* ===== STATS ===== */
+  .stats-bar { background: var(--red); padding: 20px 40px 36px; display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; clip-path: polygon(0 0, 100% 0, 100% 70%, 99% 100%, 1% 100%, 0% 70%); }
   .stat-item { text-align: center; }
   .stat-number { font-family: 'Bebas Neue', sans-serif; font-size: 42px; letter-spacing: 2px; color: var(--white); line-height: 1; }
-  .stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-top: 4px; }
+  .stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.85); margin-top: 4px; }
 
+  /* ===== SECCIONES ===== */
   .section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
   .section-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
-  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(42px, 7vw, 80px); letter-spacing: 3px; line-height: 0.95; color: var(--white); margin-bottom: 24px; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(42px, 7vw, 80px); letter-spacing: 3px; line-height: 0.95; color: var(--white); margin-bottom: 24px; }
   .section-line { width: 60px; height: 4px; background: var(--red); clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%); margin-bottom: 40px; }
+  .section-lead { color: var(--light-gray); font-size: 15px; line-height: 1.7; max-width: 520px; }
 
   .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; margin-top: 60px; }
-  .servicio-card { background: var(--dark2); padding: 48px 36px; position: relative; overflow: hidden; transition: transform 0.3s; cursor: default; }
+  .servicio-card { background: var(--dark2); padding: 48px 36px; position: relative; overflow: hidden; transition: transform 0.3s; }
   .servicio-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
   .servicio-card:hover { transform: translateY(-4px); }
   .servicio-card:hover::before { transform: scaleX(1); }
   .servicio-icon { font-size: 36px; margin-bottom: 20px; display: block; }
-  .servicio-name { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 2px; color: var(--white); margin-bottom: 12px; }
+  .servicio-name { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 28px; letter-spacing: 2px; color: var(--white); margin-bottom: 12px; }
   .servicio-desc { font-size: 15px; line-height: 1.6; color: var(--light-gray); }
 
+  /* ===== HORARIOS ===== */
   .horarios-section { background: var(--dark); padding: 100px 0; }
   .horarios-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-  .horario-card { background: var(--dark2); border: 1px solid rgba(255,255,255,0.06); padding: 40px; position: relative; margin-bottom: 16px; }
+  .horarios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-top: 40px; }
+  .horario-card { background: var(--dark2); border: 1px solid rgba(255,255,255,0.06); padding: 36px; position: relative; }
   .horario-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--red), transparent); }
-  .horario-days { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 2px; color: var(--red); margin-bottom: 24px; }
-  .turno-group { margin-bottom: 20px; }
+  .horario-badge { display: inline-block; background: var(--red); font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; padding: 5px 16px; margin-bottom: 16px; }
+  .horario-badge.alt { background: var(--gray); border: 1px solid var(--red); color: var(--red); }
+  .horario-days { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 2px; color: var(--red); margin-bottom: 8px; }
+  .turnos-wrap { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 16px; }
+  .turno-group { margin-bottom: 8px; }
   .turno-label { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--light-gray); margin-bottom: 8px; }
   .turno-hours { display: flex; flex-wrap: wrap; gap: 8px; }
   .turno-pill { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 1px; color: var(--white); background: var(--gray); padding: 6px 16px; clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%); transition: background 0.2s; }
   .turno-pill:hover { background: var(--red); }
+  .horario-note { display: inline-block; margin-top: 16px; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--light-gray); text-decoration: none; transition: color .2s; }
+  .horario-note:hover { color: var(--white); }
 
+  /* ===== PRECIOS ===== */
   .precios-section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
   .precios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2px; margin-top: 60px; }
   .precio-card { background: var(--dark2); padding: 40px 28px; text-align: center; position: relative; overflow: hidden; transition: transform 0.3s; }
-  .precio-card.featured { background: var(--red); transform: scaleY(1.03); }
+  .precio-card.featured { background: var(--red); padding-top: 52px; padding-bottom: 52px; }
   .precio-card:hover { transform: translateY(-6px); }
-  .precio-card.featured:hover { transform: scaleY(1.03) translateY(-6px); }
   .precio-badge { position: absolute; top: 16px; right: -24px; background: var(--white); color: var(--red); font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 4px 32px 4px 16px; transform: rotate(12deg); }
-  .precio-freq { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+  .precio-freq { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 8px; }
   .precio-name { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 2px; color: var(--white); margin-bottom: 20px; line-height: 1.1; }
   .precio-amount { font-family: 'Bebas Neue', sans-serif; font-size: 52px; letter-spacing: 2px; color: var(--white); line-height: 1; }
   .precio-amount sup { font-size: 24px; vertical-align: super; }
-  .precio-period { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 2px; color: rgba(255,255,255,0.5); margin-top: 8px; }
-  .precio-clases { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 2px; color: rgba(255,255,255,0.7); margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.15); }
-  .precio-cta { display: block; margin-top: 24px; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; color: var(--white) !important; border: 2px solid rgba(255,255,255,0.3); padding: 10px; transition: border-color 0.2s, background 0.2s; background: transparent; cursor: pointer; width: 100%; }
+  .precio-period { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 2px; color: rgba(255,255,255,0.6); margin-top: 8px; }
+  .precio-clases { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 2px; color: rgba(255,255,255,0.8); margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.15); }
+  .precio-cta { display: block; margin-top: 24px; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--white); border: 2px solid rgba(255,255,255,0.3); padding: 10px; transition: border-color 0.2s, background 0.2s; background: transparent; cursor: pointer; width: 100%; }
   .precio-cta:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
-  .precio-card.featured .precio-cta { border-color: var(--white); background: var(--white); color: var(--red) !important; }
+  .precio-card.featured .precio-cta { border-color: var(--white); background: var(--white); color: var(--red); }
   .precio-card.featured .precio-cta:hover { background: var(--off-white); }
   .precios-extras { display: flex; gap: 2px; margin-top: 2px; }
   .precio-extra { flex: 1; background: var(--gray); padding: 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  a.precio-extra { text-decoration: none; color: inherit; transition: background .2s; }
+  a.precio-extra:hover { background: #353535; }
+  .precio-extra.col { flex-direction: column; align-items: stretch; }
+  .precio-extra-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
   .precio-extra-name { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; color: var(--white); }
+  .precio-extra-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 2px; color: var(--light-gray); text-transform: uppercase; }
   .precio-extra-amount { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 2px; color: var(--red); }
+  .pill-cta { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; color: var(--white); background: var(--red); padding: 6px 14px; text-transform: uppercase; }
+  .alias-box { background: var(--dark); padding: 16px; border-left: 3px solid var(--red); }
+  .alias-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 4px; color: var(--light-gray); text-transform: uppercase; margin-bottom: 6px; }
+  .alias-value { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 3px; color: var(--white); word-break: break-all; }
+  .alias-help { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; letter-spacing: 2px; color: var(--light-gray); margin-top: 4px; text-transform: uppercase; }
 
+  /* ===== NUTRICIÓN ===== */
   .nutricion-section { background: var(--dark); padding: 100px 0; }
   .nutricion-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-  .nutricion-block { background: var(--red); padding: 48px; position: relative; }
-  .nutricion-block::before { content: ''; position: absolute; top: -12px; left: -12px; right: 12px; bottom: 12px; border: 2px solid rgba(217,28,28,0.3); z-index: 0; }
-  .nutricion-block-content { position: relative; z-index: 1; }
-  .nutricion-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 16px; }
-  .nutricion-prof { font-family: 'Bebas Neue', sans-serif; font-size: 42px; letter-spacing: 2px; color: var(--white); line-height: 1; margin-bottom: 8px; }
-  .nutricion-title-lic { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 3px; color: rgba(255,255,255,0.8); text-transform: uppercase; margin-bottom: 28px; }
-  .nutricion-contact { display: flex; align-items: center; gap: 12px; background: rgba(0,0,0,0.25); padding: 16px 20px; text-decoration: none; }
-  .nutricion-contact-icon { font-size: 20px; }
-  .nutricion-contact-num { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 2px; color: var(--white); }
+  .nutri-frame { position: relative; }
+  .nutri-frame::before { content: ''; position: absolute; top: -10px; left: -10px; right: 10px; bottom: 10px; border: 2px solid rgba(217,28,28,0.25); pointer-events: none; }
+  .nutri-photo { position: relative; overflow: hidden; line-height: 0; background: var(--gray); }
+  .nutri-photo img { width: 100%; height: 480px; object-fit: cover; object-position: center 20%; display: block; filter: brightness(0.92) contrast(1.05); }
+  .nutri-fade { position: absolute; bottom: 0; left: 0; right: 0; height: 60%; background: linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0.6) 50%, transparent 100%); }
+  .nutri-badge { position: absolute; top: 20px; left: 20px; background: var(--red); font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; padding: 6px 18px; line-height: 1.4; }
+  .nutri-ig { position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.55); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); color: var(--white); text-decoration: none; padding: 7px 14px; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; display: flex; align-items: center; gap: 6px; line-height: 1.4; transition: background .2s; }
+  .nutri-ig:hover { background: var(--red); }
+  .nutri-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px; }
+  .nutri-name { font-family: 'Bebas Neue', sans-serif; font-size: 38px; letter-spacing: 2px; line-height: 1; }
+  .nutri-role { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 3px; color: rgba(255,255,255,0.7); text-transform: uppercase; margin: 6px 0 18px; }
+  .nutri-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .nutri-btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--white); transition: background .2s, border-color .2s; }
+  .nutri-btn.solid { background: var(--red); }
+  .nutri-btn.solid:hover { background: var(--red-dark); }
+  .nutri-btn.ghost { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); }
+  .nutri-btn.ghost:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.5); }
   .nutricion-desc { font-size: 16px; line-height: 1.7; color: var(--light-gray); margin-bottom: 32px; }
   .nutricion-features { display: flex; flex-direction: column; gap: 16px; }
   .nutricion-feature { display: flex; align-items: flex-start; gap: 16px; }
-  .feature-dot { width: 8px; height: 8px; background: var(--red); flex-shrink: 0; margin-top: 6px; clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+  .feature-dot { width: 8px; height: 8px; background: var(--red); flex-shrink: 0; margin-top: 8px; clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
   .feature-text { font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 600; letter-spacing: 1px; color: var(--off-white); }
   .nutricion-cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 36px; font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--red); padding: 16px 32px; clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%); transition: background 0.2s, transform 0.2s; }
   .nutricion-cta:hover { background: var(--red-dark); transform: translateY(-2px); }
+  .nutri-web { display: flex; align-items: center; gap: 8px; margin-top: 16px; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: var(--light-gray); transition: color .2s; }
+  .nutri-web:hover { color: var(--white); }
 
+  /* ===== CTA TURNOS ===== */
   .turnos-cta-section { padding: 100px 40px; text-align: center; position: relative; overflow: hidden; }
   .turnos-cta-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(217,28,28,0.1) 0%, transparent 70%); }
   .turnos-cta-content { position: relative; z-index: 1; }
-  .turnos-cta-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(50px, 10vw, 110px); letter-spacing: 4px; line-height: 0.9; color: var(--white); margin-bottom: 24px; }
+  .turnos-cta-title { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(50px, 10vw, 110px); letter-spacing: 4px; line-height: 0.9; color: var(--white); margin-bottom: 24px; }
   .turnos-cta-title em { color: var(--red); font-style: normal; }
   .turnos-cta-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--light-gray); margin-bottom: 48px; }
+  .turnos-cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .turnos-cta-note { margin-top: 28px; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; letter-spacing: 3px; color: var(--light-gray); text-transform: uppercase; }
 
+  /* ===== CONTACTO ===== */
   .contacto-section { background: var(--dark); padding: 80px 40px; }
   .contacto-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
   .contacto-info-item { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 32px; }
   .contacto-icon { width: 48px; height: 48px; background: var(--red); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); }
   .contacto-info-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--light-gray); margin-bottom: 4px; }
   .contacto-info-value { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 1px; color: var(--white); }
-  .contacto-map { background: var(--gray); height: 300px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
-  .map-placeholder { text-align: center; }
-  .map-placeholder .map-icon { font-size: 48px; margin-bottom: 12px; }
-  .map-placeholder p { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; letter-spacing: 2px; color: var(--light-gray); text-transform: uppercase; }
-  .map-placeholder strong { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 3px; color: var(--white); margin-top: 8px; }
+  .contacto-info-value a { color: inherit; text-decoration: none; font-size: 18px; transition: color .2s; }
+  .contacto-info-value a:hover { color: var(--red); }
+  .contacto-actions { display: flex; gap: 12px; margin-top: 8px; flex-wrap: wrap; }
+  .contacto-map iframe { width: 100%; height: 300px; border: 0; display: block; filter: grayscale(1) contrast(1.1) brightness(0.85); }
+  .contacto-hours { background: var(--dark2); padding: 20px; border-top: 3px solid var(--red); margin-top: 2px; }
+  .contacto-hours p:first-child { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 2px; color: var(--light-gray); text-transform: uppercase; }
+  .contacto-hours p:last-child { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 1px; margin-top: 4px; }
 
   footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.06); padding: 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
   .footer-brand { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 3px; color: var(--white); }
   .footer-brand span { color: var(--red); }
-  .footer-copy { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 2px; color: rgba(255,255,255,0.3); text-transform: uppercase; }
+  .footer-copy { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 2px; color: rgba(255,255,255,0.45); text-transform: uppercase; }
   .footer-social { display: flex; gap: 12px; }
-  .social-link { width: 36px; height: 36px; background: var(--dark2); display: flex; align-items: center; justify-content: center; font-size: 16px; text-decoration: none; transition: background 0.2s; clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%); }
+  .social-link { width: 36px; height: 36px; background: var(--dark2); display: flex; align-items: center; justify-content: center; color: var(--white); text-decoration: none; transition: background 0.2s; clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%); }
   .social-link:hover { background: var(--red); }
+  .ic { flex-shrink: 0; }
 
-  /* ===== BOTÓN FLOTANTE ADMIN ===== */
-  .admin-fab {
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
-    z-index: 9998;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--dark2);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-left: 3px solid var(--red);
-    color: var(--white);
-    text-decoration: none;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    padding: 12px 20px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.6);
-    transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
-  }
-  .admin-fab:hover {
-    background: var(--red);
-    border-color: var(--red);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 32px rgba(217,28,28,0.4);
-  }
-  .admin-fab-icon {
-    font-size: 16px;
-    line-height: 1;
-  }
+  /* ===== ADMIN (solo visible para el dueño con ?admin=1) ===== */
+  .admin-fab { position: fixed; bottom: 28px; right: 28px; z-index: 950; display: flex; align-items: center; gap: 10px; background: var(--dark2); border: 1px solid rgba(255,255,255,0.12); border-left: 3px solid var(--red); color: var(--white); text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; padding: 12px 20px; box-shadow: 0 4px 24px rgba(0,0,0,0.6); transition: background 0.2s, transform 0.2s, box-shadow 0.2s; clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%); }
+  .admin-fab[hidden] { display: none; }
+  .admin-fab:hover { background: var(--red); transform: translateY(-3px); box-shadow: 0 8px 32px rgba(217,28,28,0.4); }
 
+  /* ===== MODAL DE RESERVA ===== */
+  .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 10000; display: flex; justify-content: center; padding: 20px; overflow-y: auto; }
+  .modal[hidden] { display: none; }
+  .modal-box { background: var(--dark2); width: 100%; max-width: 560px; border-top: 3px solid var(--red); margin: auto; outline: none; }
+  .modal-head { padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .step-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--red); margin-bottom: 4px; }
+  .modal-head h2 { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 26px; letter-spacing: 2px; outline: none; }
+  .modal-close { background: none; border: 0; color: var(--light-gray); font-size: 22px; cursor: pointer; padding: 6px 10px; line-height: 1; }
+  .modal-close:hover { color: var(--white); }
+  .modal-body { padding: 28px; }
+  .plan-box { background: var(--gray); padding: 14px 18px; border-left: 3px solid var(--red); margin-bottom: 24px; }
+  .plan-box .k { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--light-gray); }
+  .plan-box .v { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; margin-top: 4px; }
+  .field { margin-bottom: 18px; }
+  .field label { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--light-gray); margin-bottom: 8px; }
+  .field input { width: 100%; background: var(--gray); border: 1px solid rgba(255,255,255,0.08); color: var(--white); padding: 12px 16px; font: 16px 'Barlow', sans-serif; border-radius: 0; }
+  .field input:focus { outline: none; border-color: var(--red); }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form-error { display: none; color: #ff6b6b; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; letter-spacing: 1px; margin-bottom: 16px; }
+  .form-error.show { display: block; }
+  .btn-block { display: block; width: 100%; font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; background: var(--red); color: var(--white); border: 0; padding: 16px; cursor: pointer; text-align: center; text-decoration: none; transition: background .2s; }
+  .btn-block:hover:not(:disabled) { background: var(--red-dark); }
+  .btn-block:disabled { opacity: .4; cursor: not-allowed; }
+  .btn-ghost { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.3); padding: 10px 18px; cursor: pointer; text-decoration: none; }
+  .btn-ghost:hover { border-color: var(--red); }
+  .link-back { background: none; border: 0; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--light-gray); padding: 8px 0; }
+  .link-back:hover { color: var(--white); }
+  .modal-foot { margin-top: 20px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+
+  .counter { display: flex; justify-content: space-between; align-items: center; background: var(--gray); padding: 12px 16px; margin-bottom: 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: var(--light-gray); }
+  .counter strong { color: var(--white); font-size: 20px; }
+  .hint { min-height: 20px; margin-bottom: 12px; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 1px; color: var(--orange); }
+  .day-block { margin-bottom: 20px; }
+  .day-title { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+  .day-name { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; }
+  .day-act { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--light-gray); }
+  .slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; }
+  .slot { background: var(--gray); border: 1px solid rgba(255,255,255,0.08); color: var(--white); padding: 10px 8px; cursor: pointer; text-align: center; font-family: 'Barlow Condensed', sans-serif; transition: background .2s, border-color .2s; }
+  .slot:hover:not(:disabled) { border-color: var(--red); }
+  .slot .s-hora { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 2px; line-height: 1.1; }
+  .slot .s-cupo { display: block; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+  .s-cupo.ok { color: var(--green); } .s-cupo.low { color: var(--orange); } .s-cupo.full { color: #ff6b6b; }
+  .slot[aria-pressed="true"] { background: var(--red); border-color: var(--red); }
+  .slot[aria-pressed="true"] .s-cupo { color: var(--white); }
+  .slot:disabled { opacity: .45; cursor: not-allowed; }
+  .msg { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: var(--light-gray); padding: 12px 0; }
+  .msg.err { color: #ff6b6b; }
+  .msg-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  .summary { background: var(--gray); padding: 20px; margin-bottom: 24px; }
+  .summary h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--light-gray); margin-bottom: 16px; }
+  .sum-row { display: flex; justify-content: space-between; gap: 16px; font-family: 'Barlow Condensed', sans-serif; font-size: 16px; letter-spacing: 1px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 10px; margin-bottom: 10px; }
+  .sum-row:last-child { border: 0; margin: 0; padding: 0; }
+  .sum-row dt { color: var(--light-gray); }
+  .sum-row dd { font-weight: 700; text-align: right; }
+  .warn { background: rgba(217,28,28,0.08); border: 1px solid rgba(217,28,28,0.25); padding: 14px; margin-bottom: 24px; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; letter-spacing: 1px; color: var(--light-gray); line-height: 1.6; }
+  .warn strong { color: var(--white); }
+  .post-pago { margin-top: 20px; border: 1px solid var(--red); padding: 18px; background: rgba(217,28,28,0.08); }
+  .post-pago[hidden] { display: none; }
+  .post-pago p { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; letter-spacing: 1px; line-height: 1.5; margin-bottom: 14px; }
+
+  /* ===== ANIMACIONES ===== */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .js .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .js .reveal.visible { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .hero-eyebrow, .hero-logo-img, .hero-title, .hero-subtitle, .hero-slash, .hero-tagline, .hero-actions, .hero-scroll { opacity: 1; }
+    .js .reveal { opacity: 1; transform: none; }
+  }
 
   @media (max-width: 900px) {
     nav { padding: 16px 20px; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
+    .mobile-menu { padding: 24px 20px; }
     .stats-bar { gap: 30px; padding: 20px; clip-path: none; }
     .section { padding: 70px 20px; }
-    .nutricion-inner { grid-template-columns: 1fr; gap: 40px; }
+    .nutricion-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
+    .nutricion-section { padding: 70px 0; }
     .contacto-inner { grid-template-columns: 1fr; gap: 40px; }
     .precios-extras { flex-direction: column; }
     .precios-section { padding: 70px 20px; }
@@ -226,6 +326,9 @@
     .turnos-cta-section { padding: 70px 20px; }
     .contacto-section { padding: 70px 20px; }
     .horarios-inner { padding: 0 20px; }
+    .horarios-section { padding: 70px 0; }
+    .horarios-grid { grid-template-columns: 1fr; }
+    .horario-card { padding: 28px 22px; }
     .admin-fab { bottom: 20px; right: 16px; font-size: 12px; padding: 10px 16px; }
   }
   @media (max-width: 480px) {
@@ -233,20 +336,42 @@
     .btn-primary, .btn-secondary { width: 100%; text-align: center; }
     .precios-grid { grid-template-columns: 1fr 1fr; }
     .servicios-grid { grid-template-columns: 1fr; }
+    .modal { padding: 0; }
+    .modal-body { padding: 20px; }
+    .nutri-photo img { height: 420px; }
+    .nutri-name { font-size: 32px; }
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <a href="#" class="nav-logo">
-    <svg class="nav-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="50" cy="75" rx="32" ry="18" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-      <rect x="32" y="30" width="36" height="45" rx="8" fill="#222"/>
-      <rect x="38" y="18" width="24" height="14" rx="7" fill="#222" stroke="#333" stroke-width="2"/>
-      <path d="M45 55 Q50 46 55 55 Q50 64 45 55Z" fill="#D91C1C" opacity="0.9"/>
-      <path d="M50 47 Q54 53 50 62 Q46 53 50 47Z" fill="#D91C1C"/>
-    </svg>
+<a href="#servicios" class="skip-link">Saltar al contenido</a>
+
+<!-- Íconos reutilizables -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="logo" viewBox="0 0 100 100" fill="none">
+      <ellipse cx="50" cy="78" rx="34" ry="18" fill="#1a1a1a"/>
+      <rect x="30" y="30" width="40" height="50" rx="10" fill="#1a1a1a" stroke="#333" stroke-width="1.5"/>
+      <rect x="36" y="16" width="28" height="16" rx="8" fill="#1a1a1a" stroke="#333" stroke-width="2"/>
+      <path d="M43 57 Q50 44 57 57 Q50 70 43 57Z" fill="#D91C1C"/>
+      <path d="M50 45 Q56 54 50 66 Q44 54 50 45Z" fill="#D91C1C" opacity="0.7"/>
+    </symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-web" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
+    </symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<nav id="nav">
+  <a href="#" class="nav-logo" aria-label="Danger Fitness y Nutrición — inicio">
+    <svg class="nav-logo-icon" aria-hidden="true"><use href="#logo"/></svg>
     <div class="nav-brand">DANGER<span>FITNESS Y NUTRICIÓN</span></div>
   </a>
   <ul class="nav-links">
@@ -257,30 +382,25 @@
     <li><a href="#contacto">Contacto</a></li>
     <li><a href="#turnos" class="nav-cta">Sacar Turno</a></li>
   </ul>
-  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#servicios" onclick="toggleMenu()">Servicios</a>
-  <a href="#horarios" onclick="toggleMenu()">Horarios</a>
-  <a href="#precios" onclick="toggleMenu()">Precios</a>
-  <a href="#nutricion" onclick="toggleMenu()">Nutrición</a>
-  <a href="#contacto" onclick="toggleMenu()">Contacto</a>
-  <a href="#turnos" onclick="toggleMenu()" style="color:var(--red);">→ Sacar Turno</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#horarios">Horarios</a>
+  <a href="#precios">Precios</a>
+  <a href="#nutricion">Nutrición</a>
+  <a href="#contacto">Contacto</a>
+  <a href="#turnos" class="accent">Sacar Turno</a>
 </div>
 
+<main>
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-lines"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Fleming 758 — Mendoza</p>
-    <svg class="hero-logo-img" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="50" cy="78" rx="34" ry="18" fill="#1a1a1a"/>
-      <rect x="30" y="30" width="40" height="50" rx="10" fill="#1a1a1a" stroke="#333" stroke-width="1.5"/>
-      <rect x="36" y="16" width="28" height="16" rx="8" fill="#1a1a1a" stroke="#333" stroke-width="2"/>
-      <path d="M43 57 Q50 44 57 57 Q50 70 43 57Z" fill="#D91C1C"/>
-      <path d="M50 45 Q56 54 50 66 Q44 54 50 45Z" fill="#D91C1C" opacity="0.7"/>
-    </svg>
+    <p class="hero-eyebrow">Fleming 758 — San Rafael, Mendoza</p>
+    <svg class="hero-logo-img" aria-hidden="true"><use href="#logo"/></svg>
     <h1 class="hero-title">DANGER<span class="accent">FITNESS</span></h1>
     <p class="hero-subtitle">Y Nutrición — Fleming 758</p>
     <div class="hero-slash"></div>
@@ -290,15 +410,17 @@
       <a href="#precios" class="btn-secondary">Ver Precios</a>
     </div>
   </div>
-  <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
+  <div class="hero-scroll" aria-hidden="true"><span>Scroll</span><div class="scroll-line"></div></div>
 </section>
 
 <div class="stats-bar">
   <div class="stat-item"><div class="stat-number">5</div><div class="stat-label">Días por Semana</div></div>
-  <div class="stat-item"><div class="stat-number">10+</div><div class="stat-label">Horarios Diarios</div></div>
-  <div class="stat-item"><div class="stat-number">2</div><div class="stat-label">Especialidades</div></div>
+  <div class="stat-item"><div class="stat-number">4</div><div class="stat-label">Actividades</div></div>
+  <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">Turnos al Día</div></div>
   <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Compromiso</div></div>
 </div>
+
+<noscript><p style="padding:24px;text-align:center;color:#999">Para ver horarios, precios y reservar online activá JavaScript, o escribinos por WhatsApp al 2604 332762.</p></noscript>
 
 <section class="section" id="servicios">
   <div class="reveal">
@@ -307,10 +429,12 @@
     <div class="section-line"></div>
   </div>
   <div class="servicios-grid">
-    <div class="servicio-card reveal"><span class="servicio-icon">⚡</span><div class="servicio-name">Entrenamiento Funcional</div><p class="servicio-desc">Entrenamientos de alta intensidad orientados a mejorar tu rendimiento físico general. Fuerza, resistencia y agilidad en cada sesión.</p></div>
-    <div class="servicio-card reveal"><span class="servicio-icon">🏋️</span><div class="servicio-name">G.A.P.</div><p class="servicio-desc">Glúteos, abdomen y piernas. Rutinas específicas y progresivas para tonificar y fortalecer las zonas clave del cuerpo.</p></div>
-    <div class="servicio-card reveal"><span class="servicio-icon">🥗</span><div class="servicio-name">Asesoría Nutricional</div><p class="servicio-desc">Seguimiento personalizado con la Lic. Carolina García. Planes alimenticios adaptados a tus objetivos y estilo de vida.</p></div>
-    <div class="servicio-card reveal"><span class="servicio-icon">📅</span><div class="servicio-name">Turnos Online</div><p class="servicio-desc">Reservá tu lugar con anticipación desde la web. Sistema de packs mensuales con clases que se adaptan a tu ritmo.</p></div>
+    <div class="servicio-card reveal"><span class="servicio-icon" aria-hidden="true">⚡</span><h3 class="servicio-name">Entrenamiento Funcional</h3><p class="servicio-desc">Entrenamientos de alta intensidad orientados a mejorar tu rendimiento físico general. Fuerza, resistencia y agilidad en cada sesión.</p></div>
+    <div class="servicio-card reveal"><span class="servicio-icon" aria-hidden="true">🏋️</span><h3 class="servicio-name">G.A.P.</h3><p class="servicio-desc">Glúteos, abdomen y piernas. Rutinas específicas y progresivas para tonificar y fortalecer las zonas clave del cuerpo.</p></div>
+    <div class="servicio-card reveal"><span class="servicio-icon" aria-hidden="true">💃</span><h3 class="servicio-name">Zumba</h3><p class="servicio-desc">Clases de baile fitness para entrenar a puro ritmo, quemar energía y divertirte mientras te movés.</p></div>
+    <div class="servicio-card reveal"><span class="servicio-icon" aria-hidden="true">🩰</span><h3 class="servicio-name">Baile para Niñas</h3><p class="servicio-desc">Clases de baile para niñas de 5 a 12 años. Movimiento, coordinación y diversión en un espacio pensado para ellas.</p></div>
+    <div class="servicio-card reveal"><span class="servicio-icon" aria-hidden="true">🥗</span><h3 class="servicio-name">Asesoría Nutricional</h3><p class="servicio-desc">Seguimiento personalizado con la Lic. Carolina García. Planes alimenticios adaptados a tus objetivos y estilo de vida.</p></div>
+    <div class="servicio-card reveal"><span class="servicio-icon" aria-hidden="true">📅</span><h3 class="servicio-name">Turnos Online</h3><p class="servicio-desc">Reservá tu lugar con anticipación desde la web. Sistema de packs mensuales con clases que se adaptan a tu ritmo.</p></div>
   </div>
 </section>
 
@@ -320,28 +444,9 @@
       <p class="section-tag">Organizá tu semana</p>
       <h2 class="section-title">HORARIOS</h2>
       <div class="section-line"></div>
-      <p style="color:var(--light-gray);font-size:15px;line-height:1.7;max-width:500px;">Elegí el horario que mejor se adapte a tu rutina. Contamos con turnos mañana, siesta y tarde para que no tengas excusas.</p>
+      <p class="section-lead">Elegí el horario que mejor se adapte a tu rutina. Contamos con turnos mañana, siesta y tarde para que no tengas excusas.</p>
     </div>
-    <div style="display:flex;flex-direction:column;gap:16px;margin-top:40px;" class="reveal">
-      <div class="horario-card">
-        <div style="display:inline-block;background:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;padding:5px 16px;margin-bottom:16px;">⚡ Entrenamiento Funcional</div>
-        <div class="horario-days">Lunes — Miércoles — Viernes</div>
-        <div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:16px;">
-          <div class="turno-group"><div class="turno-label">Turno Mañana</div><div class="turno-hours"><span class="turno-pill">7:15</span><span class="turno-pill">8:15</span><span class="turno-pill">9:15</span></div></div>
-          <div class="turno-group"><div class="turno-label">Turno Siesta</div><div class="turno-hours"><span class="turno-pill">14:30</span></div></div>
-          <div class="turno-group"><div class="turno-label">Turno Tarde</div><div class="turno-hours"><span class="turno-pill">19:30</span><span class="turno-pill">20:00</span><span class="turno-pill">21:00</span></div></div>
-        </div>
-      </div>
-      <div class="horario-card">
-        <div style="display:inline-block;background:var(--gray);border:1px solid var(--red);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;padding:5px 16px;margin-bottom:16px;color:var(--red);">🏋️ G.A.P. — Glúteos, Abdomen y Piernas</div>
-        <div class="horario-days">Martes — Jueves</div>
-        <div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:16px;">
-          <div class="turno-group"><div class="turno-label">Turno Mañana</div><div class="turno-hours"><span class="turno-pill">8:15</span><span class="turno-pill">9:15</span></div></div>
-          <div class="turno-group"><div class="turno-label">Turno Siesta</div><div class="turno-hours"><span class="turno-pill">14:30</span></div></div>
-          <div class="turno-group"><div class="turno-label">Turno Tarde</div><div class="turno-hours"><span class="turno-pill">19:30</span><span class="turno-pill">20:00</span><span class="turno-pill">21:00</span></div></div>
-        </div>
-      </div>
-    </div>
+    <div class="horarios-grid reveal" id="horarios-grid"></div>
   </div>
 </section>
 
@@ -351,103 +456,33 @@
     <h2 class="section-title">PRECIOS</h2>
     <div class="section-line"></div>
   </div>
-  <div class="precios-grid reveal">
-    <div class="precio-card">
-      <div class="precio-freq">2 veces / semana</div><div class="precio-name">Pack Básico</div>
-      <div class="precio-amount"><sup>$</sup>18.000</div><div class="precio-period">por mes</div>
-      <div class="precio-clases">8 clases al mes</div>
-      <button onclick="abrirModalReserva('2 veces')" class="precio-cta">📅 Elegir Horario y Pagar</button>
-    </div>
-    <div class="precio-card">
-      <div class="precio-freq">3 veces / semana</div><div class="precio-name">Pack Estándar</div>
-      <div class="precio-amount"><sup>$</sup>21.000</div><div class="precio-period">por mes</div>
-      <div class="precio-clases">12 clases al mes</div>
-      <button onclick="abrirModalReserva('3 veces')" class="precio-cta">📅 Elegir Horario y Pagar</button>
-    </div>
-    <div class="precio-card featured">
-      <div class="precio-badge">Popular</div>
-      <div class="precio-freq">4 veces / semana</div><div class="precio-name">Pack Pro</div>
-      <div class="precio-amount"><sup>$</sup>23.000</div><div class="precio-period">por mes</div>
-      <div class="precio-clases">16 clases al mes</div>
-      <button onclick="abrirModalReserva('4 veces')" class="precio-cta">📅 Elegir Horario y Pagar</button>
-    </div>
-    <div class="precio-card">
-      <div class="precio-freq">5 veces / semana</div><div class="precio-name">Pack Intensivo</div>
-      <div class="precio-amount"><sup>$</sup>26.000</div><div class="precio-period">por mes</div>
-      <div class="precio-clases">20 clases al mes</div>
-      <button onclick="abrirModalReserva('5 veces')" class="precio-cta">📅 Elegir Horario y Pagar</button>
-    </div>
-  </div>
-  <div class="precios-extras reveal">
-    <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=efa6aa5607254d629dcc169fae83388f" target="_blank" class="precio-extra" style="text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#2a2a2a'" onmouseout="this.style.background=''">
-      <div>
-        <div class="precio-extra-name">Pase Libre</div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:2px;color:var(--light-gray);text-transform:uppercase;">Clases ilimitadas</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:12px;">
-        <div class="precio-extra-amount">$30.000</div>
-        <span style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;color:var(--white);background:var(--red);padding:6px 14px;text-transform:uppercase;">💳 Suscribirse</span>
-      </div>
-    </a>
-    <div class="precio-extra" style="flex-direction:column;align-items:flex-start;gap:16px;">
-      <div style="display:flex;justify-content:space-between;width:100%;align-items:center;flex-wrap:wrap;gap:12px;">
-        <div><div class="precio-extra-name">Clase Individual</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:2px;color:var(--light-gray);text-transform:uppercase;">Por sesión · Pago único</div></div>
-        <div class="precio-extra-amount">$2.200</div>
-      </div>
-      <div style="background:var(--dark);padding:16px;width:100%;border-left:3px solid var(--red);">
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:4px;color:var(--light-gray);text-transform:uppercase;margin-bottom:6px;">Alias MercadoPago del gimnasio</div>
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:3px;color:var(--white);">ALIAS.DEL.DUEÑO</div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:2px;color:var(--light-gray);margin-top:4px;text-transform:uppercase;">Buscalo en tu app de MP → pagar → alias</div>
-      </div>
-    </div>
-  </div>
+  <div class="precios-grid reveal" id="precios-grid"></div>
+  <div class="precios-extras reveal" id="precios-extras"></div>
 </section>
 
 <section class="nutricion-section" id="nutricion">
   <div class="nutricion-inner">
-    <div class="nutricion-visual reveal">
-      <div style="position:relative;">
-        <!-- Foto de la nutricionista -->
-        <div style="position:relative;overflow:hidden;line-height:0;">
-          <img src="./foto.jpg" alt="Lic. Carolina García — Nutricionista"
-               style="width:100%;height:480px;object-fit:cover;object-position:center 20%;display:block;filter:brightness(0.92) contrast(1.05);">
-          <!-- Overlay degradado inferior -->
-          <div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(to top,rgba(10,10,10,1) 0%,rgba(10,10,10,0.6) 50%,transparent 100%);"></div>
-          <!-- Badge rojo superior -->
-          <div style="position:absolute;top:20px;left:20px;background:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;padding:6px 18px;color:var(--white);">✦ Nutrición Profesional</div>
-          <!-- Link Instagram arriba derecha -->
-          <a href="https://www.instagram.com/carogarcia2940" target="_blank"
-             style="position:absolute;top:20px;right:20px;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.15);color:var(--white);text-decoration:none;padding:7px 14px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:background 0.2s;"
-             onmouseover="this.style.background='var(--red)'" onmouseout="this.style.background='rgba(0,0,0,0.5)'">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-            @carogarcia2940
+    <div class="reveal">
+      <div class="nutri-frame">
+        <div class="nutri-photo">
+          <img src="./foto.jpg" alt="Lic. Carolina García — Nutricionista" width="560" height="480" loading="lazy">
+          <div class="nutri-fade"></div>
+          <div class="nutri-badge">✦ Nutrición Profesional</div>
+          <a class="nutri-ig" href="https://www.instagram.com/carogarcia2940" target="_blank" rel="noopener noreferrer">
+            <svg class="ic" width="14" height="14" aria-hidden="true"><use href="#i-ig"/></svg>@carogarcia2940
           </a>
         </div>
-        <!-- Info sobre la foto -->
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px;">
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:2px;color:var(--white);line-height:1;">LIC. CAROLINA<br>GARCÍA</div>
-          <div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:3px;color:rgba(255,255,255,0.6);text-transform:uppercase;margin:6px 0 18px;">Licenciada en Nutrición</div>
-          <!-- Botones acción -->
-          <div style="display:flex;gap:8px;flex-wrap:wrap;">
-            <a href="https://wa.me/542604840322" target="_blank"
-               style="display:inline-flex;align-items:center;gap:8px;background:var(--red);padding:11px 18px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--white);transition:background 0.2s;"
-               onmouseover="this.style.background='var(--red-dark)'" onmouseout="this.style.background='var(--red)'">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              WhatsApp
-            </a>
-            <a href="https://nutricarolinagarcia.netlify.app" target="_blank"
-               style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);padding:11px 18px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--white);transition:background 0.2s,border-color 0.2s;"
-               onmouseover="this.style.background='rgba(255,255,255,0.15)';this.style.borderColor='rgba(255,255,255,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.borderColor='rgba(255,255,255,0.2)'">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
-              Ver su web
-            </a>
+        <div class="nutri-info">
+          <div class="nutri-name">LIC. CAROLINA<br>GARCÍA</div>
+          <div class="nutri-role">Licenciada en Nutrición</div>
+          <div class="nutri-actions">
+            <a class="nutri-btn solid" data-wa="nutri" href="#contacto" target="_blank" rel="noopener noreferrer"><svg class="ic" width="14" height="14" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+            <a class="nutri-btn ghost" href="https://nutricarolinagarcia.netlify.app" target="_blank" rel="noopener noreferrer"><svg class="ic" width="14" height="14" aria-hidden="true"><use href="#i-web"/></svg>Ver su web</a>
           </div>
         </div>
-        <!-- Marco decorativo -->
-        <div style="position:absolute;top:-10px;left:-10px;right:10px;bottom:10px;border:2px solid rgba(217,28,28,0.2);pointer-events:none;z-index:0;"></div>
       </div>
     </div>
-    <div class="nutricion-content reveal">
+    <div class="reveal">
       <p class="section-tag">Nutrición Profesional</p>
       <h2 class="section-title">TU CUERPO<br>EMPIEZA<br>EN LA COCINA</h2>
       <div class="section-line"></div>
@@ -458,10 +493,9 @@
         <div class="nutricion-feature"><div class="feature-dot"></div><div class="feature-text">Compatibilidad con tu rutina de entrenamiento</div></div>
         <div class="nutricion-feature"><div class="feature-dot"></div><div class="feature-text">Consultá disponibilidad de turnos directamente</div></div>
       </div>
-      <a href="https://wa.me/542604840322" target="_blank" class="nutricion-cta">📅 Sacar Turno con Nutricionista</a>
-      <a href="https://nutricarolinagarcia.netlify.app" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:var(--light-gray);transition:color 0.2s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--light-gray)'">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
-        Ver sitio web de la nutricionista →
+      <a data-wa="nutri" href="#contacto" target="_blank" rel="noopener noreferrer" class="nutricion-cta">📅 Sacar Turno con Nutricionista</a>
+      <a href="https://nutricarolinagarcia.netlify.app" target="_blank" rel="noopener noreferrer" class="nutri-web">
+        <svg class="ic" width="14" height="14" aria-hidden="true"><use href="#i-web"/></svg>Ver sitio web de la nutricionista →
       </a>
     </div>
   </div>
@@ -471,12 +505,12 @@
   <div class="turnos-cta-bg"></div>
   <div class="turnos-cta-content reveal">
     <h2 class="turnos-cta-title">RESERVÁ<br>TU <em>LUGAR</em><br>HOY</h2>
-    <p class="turnos-cta-sub">Elegí tu plan, horario y pagá todo desde acá</p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-      <a href="https://wa.me/542604332762" target="_blank" class="btn-primary">📲 Contactar por WhatsApp</a>
+    <p class="turnos-cta-sub">Elegí tu plan, tus horarios y pagá todo desde acá</p>
+    <div class="turnos-cta-actions">
+      <a data-wa="profe" href="#contacto" target="_blank" rel="noopener noreferrer" class="btn-primary">📲 Contactar por WhatsApp</a>
       <a href="#precios" class="btn-secondary">Ver Planes</a>
     </div>
-    <p style="margin-top:28px;font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:3px;color:var(--light-gray);text-transform:uppercase;">O escribinos al 2604 332762 · Profe Luciano</p>
+    <p class="turnos-cta-note">O escribinos al 2604 332762 · Profe Luciano</p>
   </div>
 </section>
 
@@ -487,319 +521,520 @@
       <h2 class="section-title">CONTACTO</h2>
       <div class="section-line"></div>
       <div class="contacto-info-item">
-        <div class="contacto-icon">📍</div>
-        <div><div class="contacto-info-label">Dirección</div><div class="contacto-info-value">Fleming 758</div></div>
+        <div class="contacto-icon" aria-hidden="true">📍</div>
+        <div><div class="contacto-info-label">Dirección</div><div class="contacto-info-value">Fleming 758, San Rafael</div></div>
       </div>
       <div class="contacto-info-item">
-        <div class="contacto-icon">📱</div>
+        <div class="contacto-icon" aria-hidden="true">📱</div>
         <div><div class="contacto-info-label">Profe Luciano</div><div class="contacto-info-value">2604 332762</div></div>
       </div>
       <div class="contacto-info-item">
-        <div class="contacto-icon">🥗</div>
+        <div class="contacto-icon" aria-hidden="true">🥗</div>
         <div><div class="contacto-info-label">Lic. Carolina García (Nutrición)</div><div class="contacto-info-value">2604 840322</div></div>
       </div>
       <div class="contacto-info-item">
-        <div class="contacto-icon" style="font-size:16px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
-        </div>
+        <div class="contacto-icon" aria-hidden="true"><svg class="ic" width="20" height="20" style="color:#fff"><use href="#i-ig"/></svg></div>
         <div>
           <div class="contacto-info-label">Instagram Nutricionista</div>
-          <a href="https://www.instagram.com/carogarcia2940" target="_blank" style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:1px;color:var(--white);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--white)'">@carogarcia2940</a>
+          <div class="contacto-info-value"><a href="https://www.instagram.com/carogarcia2940" target="_blank" rel="noopener noreferrer">@carogarcia2940</a></div>
         </div>
       </div>
-      <div style="display:flex;gap:12px;margin-top:8px;">
-        <a href="https://wa.me/542604332762" target="_blank" class="btn-primary" style="font-size:13px;">WhatsApp Profe</a>
-        <a href="https://wa.me/542604840322" target="_blank" class="btn-secondary" style="font-size:13px;">WhatsApp Nutricionista</a>
+      <div class="contacto-actions">
+        <a data-wa="profe" href="#contacto" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">WhatsApp Profe</a>
+        <a data-wa="nutri" href="#contacto" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-sm">WhatsApp Nutricionista</a>
       </div>
     </div>
     <div class="reveal">
-      <div class="contacto-map" style="padding:0;border:none;height:300px;">
+      <div class="contacto-map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.29114024851!2d-68.3311521!3d-34.5967988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967907df26d63437%3A0x8e6dede7c4e324bb!2sFleming%20758%2C%20M5602%20San%20Rafael%2C%20Mendoza!5e0!3m2!1ses-419!2sar!4v1774029796686!5m2!1ses-419!2sar"
-          width="100%" height="300" style="border:0;display:block;filter:grayscale(1) contrast(1.1) brightness(0.85);"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          title="Danger Fitness — Fleming 758, San Rafael, Mendoza">
-        </iframe>
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa: Danger Fitness — Fleming 758, San Rafael, Mendoza"></iframe>
       </div>
-      <div style="background:var(--dark2);padding:20px;border-top:3px solid var(--red);margin-top:2px;">
-        <p style="font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:2px;color:var(--light-gray);text-transform:uppercase;">Horario de atención</p>
-        <p style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:1px;color:var(--white);margin-top:4px;">Lunes a Viernes · 7:00 a 21:00</p>
+      <div class="contacto-hours">
+        <p>Horario de atención</p>
+        <p>Lunes a Viernes · 7:00 a 21:00</p>
       </div>
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="footer-brand">DANGER <span>FITNESS</span></div>
-  <div class="footer-copy">© 2025 Danger Fitness y Nutrición · Fleming 758</div>
+  <div class="footer-copy">© <span id="year">2026</span> Danger Fitness y Nutrición · Fleming 758</div>
   <div class="footer-social">
-    <a href="https://www.instagram.com/dangerfitness_nutricion" target="_blank" class="social-link" title="Instagram">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    <a href="https://www.instagram.com/dangerfitness_nutricion" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram de Danger Fitness">
+      <svg class="ic" width="18" height="18" aria-hidden="true"><use href="#i-ig"/></svg>
     </a>
-    <a href="https://wa.me/542604332762" target="_blank" class="social-link" title="WhatsApp">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <a data-wa="profe" href="#contacto" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp de Danger Fitness">
+      <svg class="ic" width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>
     </a>
   </div>
 </footer>
 
-<!-- ===== BOTÓN FLOTANTE ADMIN ===== -->
-<a href="./admin.html" class="admin-fab">
-  <span class="admin-fab-icon">⚙️</span>
-  ADMIN
-</a>
+<!-- Botón de admin: oculto para visitantes. El dueño lo activa entrando una vez con ?admin=1 (y lo desactiva con ?admin=0). -->
+<a href="./admin.html" class="admin-fab" id="admin-fab" hidden><span aria-hidden="true">⚙️</span> ADMIN</a>
 
-<!-- ===== MODAL RESERVA ===== -->
-<div id="modal-reserva" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:2000;align-items:center;justify-content:center;padding:20px;overflow-y:auto;">
-  <div style="background:var(--dark2);width:100%;max-width:560px;border-top:3px solid var(--red);margin:auto;">
+<!-- ===== MODAL DE RESERVA ===== -->
+<div id="modal" class="modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+    <div class="modal-head">
+      <div>
+        <div class="step-tag" id="modal-step">Paso 1 de 3</div>
+        <h2 id="modal-title" tabindex="-1">Tus datos</h2>
+      </div>
+      <button type="button" class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
+    </div>
 
     <!-- PASO 1 -->
-    <div id="modal-paso1">
-      <div style="padding:24px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;">
-        <div>
-          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--red);margin-bottom:4px;">Paso 1 de 3</div>
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;">TUS DATOS</div>
-        </div>
-        <button onclick="cerrarModalReserva()" style="background:none;border:none;color:var(--light-gray);font-size:22px;cursor:pointer;">✕</button>
-      </div>
-      <div style="padding:28px;">
-        <div style="background:var(--gray);padding:14px 18px;border-left:3px solid var(--red);margin-bottom:24px;">
-          <div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--light-gray);">Plan seleccionado</div>
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:var(--white);margin-top:4px;" id="modal-plan-nombre">—</div>
-        </div>
-        <div style="margin-bottom:18px;">
-          <label style="display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--light-gray);margin-bottom:8px;">Nombre</label>
-          <input type="text" id="r-nombre" placeholder="Ej: Juan" style="width:100%;background:var(--gray);border:1px solid rgba(255,255,255,0.08);color:var(--white);padding:12px 16px;font-family:'Barlow',sans-serif;font-size:16px;outline:none;" onfocus="this.style.borderColor='var(--red)'" onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
-        </div>
-        <div style="margin-bottom:18px;">
-          <label style="display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--light-gray);margin-bottom:8px;">Apellido</label>
-          <input type="text" id="r-apellido" placeholder="Ej: Pérez" style="width:100%;background:var(--gray);border:1px solid rgba(255,255,255,0.08);color:var(--white);padding:12px 16px;font-family:'Barlow',sans-serif;font-size:16px;outline:none;" onfocus="this.style.borderColor='var(--red)'" onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
-        </div>
-        <div style="margin-bottom:24px;">
-          <label style="display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--light-gray);margin-bottom:8px;">Teléfono</label>
-          <input type="tel" id="r-telefono" placeholder="Ej: 2604123456" style="width:100%;background:var(--gray);border:1px solid rgba(255,255,255,0.08);color:var(--white);padding:12px 16px;font-family:'Barlow',sans-serif;font-size:16px;outline:none;" onfocus="this.style.borderColor='var(--red)'" onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
-        </div>
-        <div id="error-paso1" style="display:none;color:var(--red);font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;"></div>
-        <button onclick="irPaso2()" style="width:100%;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:800;letter-spacing:3px;text-transform:uppercase;background:var(--red);color:var(--white);border:none;padding:16px;cursor:pointer;" onmouseover="this.style.background='var(--red-dark)'" onmouseout="this.style.background='var(--red)'">Elegir Horario →</button>
-      </div>
+    <div class="modal-body" id="paso1">
+      <div class="plan-box"><div class="k">Plan seleccionado</div><div class="v" id="modal-plan-nombre">—</div></div>
+      <div class="field"><label for="r-nombre">Nombre</label><input type="text" id="r-nombre" placeholder="Ej: Juan" maxlength="40" autocomplete="given-name"></div>
+      <div class="field"><label for="r-apellido">Apellido</label><input type="text" id="r-apellido" placeholder="Ej: Pérez" maxlength="40" autocomplete="family-name"></div>
+      <div class="field"><label for="r-telefono">Teléfono</label><input type="tel" id="r-telefono" placeholder="Ej: 2604123456" maxlength="20" inputmode="tel" autocomplete="tel"></div>
+      <div class="hp" aria-hidden="true"><label for="r-web">No completar</label><input type="text" id="r-web" tabindex="-1" autocomplete="off"></div>
+      <div class="form-error" id="error-paso1" role="alert"></div>
+      <button type="button" class="btn-block" id="btn-paso1">Elegir horarios →</button>
     </div>
 
     <!-- PASO 2 -->
-    <div id="modal-paso2" style="display:none;">
-      <div style="padding:24px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;">
-        <div>
-          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--red);margin-bottom:4px;">Paso 2 de 3</div>
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;">ELEGÍ TU HORARIO</div>
-        </div>
-        <button onclick="cerrarModalReserva()" style="background:none;border:none;color:var(--light-gray);font-size:22px;cursor:pointer;">✕</button>
-      </div>
-      <div style="padding:28px;">
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--light-gray);margin-bottom:12px;">Elegí el día</div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;" id="r-dias-grid"></div>
-        <div id="r-horarios-wrap" style="display:none;">
-          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--light-gray);margin-bottom:12px;">Elegí el horario</div>
-          <div id="r-horarios-lista" style="display:flex;flex-direction:column;gap:8px;"></div>
-        </div>
-        <div style="margin-top:20px;">
-          <button onclick="volverPaso1()" style="background:none;border:none;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--light-gray);">← Volver</button>
-        </div>
+    <div class="modal-body" id="paso2" hidden>
+      <div class="counter" aria-live="polite"><span>Horarios elegidos</span><span><strong id="r-count">0</strong> de <span id="r-total">0</span></span></div>
+      <div class="hint" id="r-hint" aria-live="polite"></div>
+      <div id="r-dias"></div>
+      <div class="modal-foot">
+        <button type="button" class="btn-block" id="btn-paso2" disabled>Continuar →</button>
+        <button type="button" class="link-back" id="back-paso1">← Volver</button>
       </div>
     </div>
 
     <!-- PASO 3 -->
-    <div id="modal-paso3" style="display:none;">
-      <div style="padding:24px;border-bottom:1px solid rgba(255,255,255,0.06);">
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--red);margin-bottom:4px;">Paso 3 de 3</div>
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;">CONFIRMÁ Y PAGÁ</div>
+    <div class="modal-body" id="paso3" hidden>
+      <div class="summary">
+        <h3>Resumen de tu reserva</h3>
+        <dl>
+          <div class="sum-row"><dt>Nombre</dt><dd id="confirm-nombre">—</dd></div>
+          <div class="sum-row"><dt>Plan</dt><dd id="confirm-plan">—</dd></div>
+          <div class="sum-row"><dt>Horarios</dt><dd id="confirm-horarios">—</dd></div>
+          <div class="sum-row"><dt>Reservado el</dt><dd id="confirm-fecha">—</dd></div>
+        </dl>
       </div>
-      <div style="padding:28px;">
-        <div style="background:var(--gray);padding:20px;margin-bottom:24px;">
-          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--light-gray);margin-bottom:16px;">Resumen de tu reserva</div>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="display:flex;justify-content:space-between;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:1px;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:10px;"><span style="color:var(--light-gray);">Nombre</span><span style="color:var(--white);font-weight:700;" id="confirm-nombre">—</span></div>
-            <div style="display:flex;justify-content:space-between;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:1px;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:10px;"><span style="color:var(--light-gray);">Plan</span><span style="color:var(--white);font-weight:700;" id="confirm-plan">—</span></div>
-            <div style="display:flex;justify-content:space-between;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:1px;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:10px;"><span style="color:var(--light-gray);">Horario</span><span style="color:var(--white);font-weight:700;" id="confirm-horario">—</span></div>
-            <div style="display:flex;justify-content:space-between;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:1px;"><span style="color:var(--light-gray);">Fecha inicio</span><span style="color:var(--white);font-weight:700;" id="confirm-fecha">—</span></div>
-          </div>
-        </div>
-        <div style="background:rgba(217,28,28,0.08);border:1px solid rgba(217,28,28,0.2);padding:14px;margin-bottom:24px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:1px;color:var(--light-gray);line-height:1.6;">
-          ⚠️ Al hacer click en <strong style="color:var(--white);">Ir a Pagar</strong> vas a ser redirigido a MercadoPago. Una vez confirmado el pago, el Profe Luciano activará tu acceso en menos de 24hs.
-        </div>
-        <a id="btn-ir-mp" href="#" target="_blank" onclick="registrarPreReserva()" style="display:block;width:100%;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;letter-spacing:3px;text-transform:uppercase;background:var(--red);color:var(--white);text-decoration:none;padding:18px;text-align:center;" onmouseover="this.style.background='var(--red-dark)'" onmouseout="this.style.background='var(--red)'">💳 Ir a Pagar en MercadoPago</a>
-        <div style="margin-top:16px;text-align:center;">
-          <button onclick="volverPaso2()" style="background:none;border:none;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--light-gray);">← Cambiar horario</button>
-        </div>
+      <div class="warn">⚠️ Al hacer click en <strong>Ir a pagar</strong> vas a ser redirigido a MercadoPago. Una vez confirmado el pago, el Profe Luciano activará tu acceso en menos de 24 hs.</div>
+      <a id="btn-ir-mp" class="btn-block" href="#" target="_blank" rel="noopener noreferrer">💳 Ir a pagar en MercadoPago</a>
+      <div class="post-pago" id="post-pago" hidden role="status">
+        <p><strong>Último paso:</strong> avisale al Profe por WhatsApp para que active tu acceso más rápido.</p>
+        <a id="btn-wa-aviso" class="btn-block" href="#" target="_blank" rel="noopener noreferrer">📲 Avisar por WhatsApp</a>
       </div>
+      <div class="modal-foot"><button type="button" class="link-back" id="back-paso2">← Cambiar horarios</button></div>
     </div>
-
   </div>
 </div>
 
 <script>
-  const API = 'https://script.google.com/macros/s/AKfycbwM-yFN-XdsNHM_PM-3CarGijvmvBkYUORZknTrZo1M3fwRil-AuHdsSL4G4Ye7_er_/exec';
-  const DIAS_SEMANA = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+(() => {
+  'use strict';
 
-  let planSeleccionado = null;
-  let linkMPSeleccionado = null;
-  let diaSeleccionado = null;
-  let horarioSeleccionado = null;
-  let todosLosHorarios = [];
+  /* =====================================================================
+     CONFIGURACIÓN — todo lo que cambia seguido está acá arriba
+     ===================================================================== */
+  const CONFIG = {
+    API: 'https://script.google.com/macros/s/AKfycbwM-yFN-XdsNHM_PM-3CarGijvmvBkYUORZknTrZo1M3fwRil-AuHdsSL4G4Ye7_er_/exec',
+    WA: { profe: '542604332762', nutri: '542604840322' },
+    ALIAS_MP: '', // Poné acá el alias real (ej: 'DANGER.FITNESS'). Si queda vacío, no se muestra.
 
-  const PLANES_MP = {
-    '2 veces': { link: 'https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=eb5122df961a4f04b7ff3bb40676e846', nombre: '2 veces por semana — $18.000/mes' },
-    '3 veces': { link: 'https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=5064e8eaa67546b6aeb7945216048a0f', nombre: '3 veces por semana — $21.000/mes' },
-    '4 veces': { link: 'https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=843aae82966b4016ab18c78d44c5e7d0', nombre: '4 veces por semana — $23.000/mes' },
-    '5 veces': { link: 'https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=4b6f7bfb6e95467f8149c01eee3c07b4', nombre: '5 veces por semana — $26.000/mes' },
+    PLANES: [
+      { veces: 2, nombre: 'Pack Básico',    precio: 18000, link: 'https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=eb5122df961a4f04b7ff3bb40676e846' },
+      { veces: 3, nombre: 'Pack Estándar',  precio: 21000, link: 'https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=5064e8eaa67546b6aeb7945216048a0f' },
+      { veces: 4, nombre: 'Pack Pro',       precio: 23000, link: 'https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=843aae82966b4016ab18c78d44c5e7d0', popular: true },
+      { veces: 5, nombre: 'Pack Intensivo', precio: 26000, link: 'https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=4b6f7bfb6e95467f8149c01eee3c07b4' },
+    ],
+    PASE_LIBRE: { precio: 30000, link: 'https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=efa6aa5607254d629dcc169fae83388f' },
+    CLASE_INDIVIDUAL: { precio: 2200 },
+
+    // Horarios y actividades. reservaOnline:false = se muestra en la web pero no entra en el flujo de reserva online.
+    // Los días de Zumba y Baile están en Martes y Jueves: si son otros, cambialos acá.
+    ACTIVIDADES: [
+      { nombre: 'Entrenamiento Funcional', corto: 'Funcional', icono: '⚡', dias: ['Lunes', 'Miércoles', 'Viernes'],
+        horarios: [['08:15', '09:15'], ['14:00', '15:00'], ['19:15', '20:15']], reservaOnline: true },
+      { nombre: 'G.A.P.', sub: 'Glúteos, Abdomen y Piernas', corto: 'G.A.P.', icono: '🏋️', dias: ['Martes', 'Jueves'],
+        horarios: [['08:15', '09:15'], ['14:00', '15:00'], ['19:15', '20:15']], reservaOnline: true },
+      { nombre: 'Zumba', corto: 'Zumba', icono: '💃', dias: ['Martes', 'Jueves'],
+        horarios: [['17:15', '18:15']], reservaOnline: false },
+      { nombre: 'Baile para niñas', sub: 'De 5 a 12 años', corto: 'Baile niñas', icono: '🩰', dias: ['Martes', 'Jueves'],
+        horarios: [['18:15', '19:15']], reservaOnline: false },
+    ],
   };
 
+  const DIAS = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
+
+  /* =====================================================================
+     UTILIDADES
+     ===================================================================== */
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const fmt = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  const norm = s => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+  const horaInicio = txt => { const m = String(txt ?? '').match(/(\d{1,2})[:.](\d{2})/); return m ? m[1].padStart(2, '0') + ':' + m[2] : null; };
+  const waLink = (quien, texto) => `https://wa.me/${CONFIG.WA[quien]}` + (texto ? `?text=${encodeURIComponent(texto)}` : '');
+
+  // Crea elementos sin usar innerHTML (evita XSS con datos del API)
+  function h(tag, attrs = {}, ...kids) {
+    const e = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (v == null || v === false) continue;
+      if (k === 'class') e.className = v;
+      else if (k.startsWith('on') && typeof v === 'function') e.addEventListener(k.slice(2), v);
+      else e.setAttribute(k, v === true ? '' : v);
+    }
+    for (const kid of kids.flat()) {
+      if (kid == null || kid === false) continue;
+      e.append(kid.nodeType ? kid : document.createTextNode(kid));
+    }
+    return e;
+  }
+
+  // Links de WhatsApp centralizados
+  $$('[data-wa]').forEach(a => { a.href = waLink(a.dataset.wa); });
+
+  /* =====================================================================
+     HORARIOS (se dibujan desde CONFIG.ACTIVIDADES)
+     ===================================================================== */
+  const turnoDe = ini => { const hh = +ini.split(':')[0]; return hh < 12 ? 'Turno Mañana' : hh < 17 ? 'Turno Siesta' : 'Turno Tarde'; };
+
+  function renderHorarios() {
+    const grid = $('#horarios-grid');
+    CONFIG.ACTIVIDADES.forEach(a => {
+      const grupos = {};
+      a.horarios.forEach(([ini, fin]) => { (grupos[turnoDe(ini)] ||= []).push(`${ini} a ${fin}`); });
+      grid.append(h('article', { class: 'horario-card' },
+        h('div', { class: 'horario-badge' + (a.reservaOnline ? '' : ' alt') }, `${a.icono} ${a.nombre}` + (a.sub ? ` — ${a.sub}` : '')),
+        h('h3', { class: 'horario-days' }, a.dias.join(' — ')),
+        h('div', { class: 'turnos-wrap' },
+          Object.entries(grupos).map(([label, pills]) =>
+            h('div', { class: 'turno-group' },
+              h('div', { class: 'turno-label' }, label),
+              h('div', { class: 'turno-hours' }, pills.map(p => h('span', { class: 'turno-pill' }, p)))))),
+        a.reservaOnline ? null : h('a', { class: 'horario-note', href: waLink('profe'), target: '_blank', rel: 'noopener noreferrer' }, 'Consultá cupos y valores por WhatsApp →')
+      ));
+    });
+  }
+
+  // Horarios que se pueden reservar online: { 'Lunes': Map('08:15' -> 'Funcional'), ... }
+  const RESERVABLES = {};
+  CONFIG.ACTIVIDADES.filter(a => a.reservaOnline).forEach(a =>
+    a.dias.forEach(d => {
+      (RESERVABLES[d] ||= new Map());
+      a.horarios.forEach(([ini]) => RESERVABLES[d].set(ini, a.corto));
+    }));
+
+  /* =====================================================================
+     PRECIOS
+     ===================================================================== */
+  function renderPrecios() {
+    const grid = $('#precios-grid');
+    CONFIG.PLANES.forEach(p => {
+      grid.append(h('div', { class: 'precio-card' + (p.popular ? ' featured' : '') },
+        p.popular ? h('div', { class: 'precio-badge' }, 'Popular') : null,
+        h('div', { class: 'precio-freq' }, `${p.veces} veces / semana`),
+        h('h3', { class: 'precio-name' }, p.nombre),
+        h('div', { class: 'precio-amount' }, h('sup', {}, '$'), fmt(p.precio)),
+        h('div', { class: 'precio-period' }, 'por mes'),
+        h('div', { class: 'precio-clases' }, `${p.veces * 4} clases al mes`),
+        h('button', { type: 'button', class: 'precio-cta', onclick: () => abrirModal(p) }, '📅 Elegir horarios y pagar')
+      ));
+    });
+
+    const extras = $('#precios-extras');
+    extras.append(
+      h('a', { class: 'precio-extra', href: CONFIG.PASE_LIBRE.link, target: '_blank', rel: 'noopener noreferrer' },
+        h('div', {}, h('div', { class: 'precio-extra-name' }, 'Pase Libre'), h('div', { class: 'precio-extra-sub' }, 'Clases ilimitadas')),
+        h('div', { style: 'display:flex;align-items:center;gap:12px;flex-wrap:wrap' },
+          h('div', { class: 'precio-extra-amount' }, `$${fmt(CONFIG.PASE_LIBRE.precio)}`),
+          h('span', { class: 'pill-cta' }, '💳 Suscribirse'))),
+      h('div', { class: 'precio-extra col' },
+        h('div', { class: 'precio-extra-row' },
+          h('div', {}, h('div', { class: 'precio-extra-name' }, 'Clase Individual'), h('div', { class: 'precio-extra-sub' }, 'Por sesión · Pago único')),
+          h('div', { class: 'precio-extra-amount' }, `$${fmt(CONFIG.CLASE_INDIVIDUAL.precio)}`)),
+        CONFIG.ALIAS_MP ? h('div', { class: 'alias-box' },
+          h('div', { class: 'alias-label' }, 'Alias MercadoPago del gimnasio'),
+          h('div', { class: 'alias-value' }, CONFIG.ALIAS_MP),
+          h('div', { class: 'alias-help' }, 'Buscalo en tu app de MP → pagar → alias')) : null)
+    );
+  }
+
+  /* =====================================================================
+     API
+     ===================================================================== */
   async function apiGet(path) {
-    const res = await fetch(`${API}?path=${path}`);
-    return res.json();
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), 12000);
+    try {
+      const res = await fetch(`${CONFIG.API}?path=${encodeURIComponent(path)}`, { signal: ctrl.signal });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return await res.json();
+    } finally { clearTimeout(t); }
   }
 
-  async function apiPost(path, id, action, body) {
-    let url = `${API}?path=${path}`;
-    if (id) url += `&id=${id}`;
-    if (action) url += `&action=${action}`;
-    const res = await fetch(url, { method: 'POST', body: JSON.stringify(body) });
-    return res.json();
+  // Envío "dispara y olvida": no bloquea el click ni la apertura de MercadoPago
+  function registrarCliente(body) {
+    try {
+      fetch(`${CONFIG.API}?path=clientes`, { method: 'POST', body: JSON.stringify(body), keepalive: true }).catch(() => {});
+    } catch (_) { /* el aviso por WhatsApp es el respaldo */ }
   }
 
-  function abrirModalReserva(planKey) {
-    planSeleccionado = planKey;
-    linkMPSeleccionado = PLANES_MP[planKey].link;
-    document.getElementById('modal-plan-nombre').textContent = PLANES_MP[planKey].nombre;
-    document.getElementById('modal-reserva').style.display = 'flex';
-    document.getElementById('modal-paso1').style.display = 'block';
-    document.getElementById('modal-paso2').style.display = 'none';
-    document.getElementById('modal-paso3').style.display = 'none';
+  /* =====================================================================
+     MODAL DE RESERVA
+     ===================================================================== */
+  const modal = $('#modal');
+  const box = $('.modal-box', modal);
+  const PASOS = { 1: 'Tus datos', 2: 'Elegí tus horarios', 3: 'Confirmá y pagá' };
+  const state = { plan: null, datos: null, sel: new Map(), horarios: null, registrado: false, lastFocus: null };
+
+  function abrirModal(plan) {
+    state.plan = plan; state.datos = null; state.sel = new Map(); state.registrado = false;
+    state.lastFocus = document.activeElement;
+    $('#modal-plan-nombre').textContent = `${plan.veces} veces por semana — $${fmt(plan.precio)}/mes`;
+    ['r-nombre', 'r-apellido', 'r-telefono', 'r-web'].forEach(id => { $('#' + id).value = ''; });
+    $('#error-paso1').classList.remove('show');
+    modal.hidden = false;
     document.body.style.overflow = 'hidden';
+    irPaso(1);
+    $('#r-nombre').focus();
   }
 
-  function cerrarModalReserva() {
-    document.getElementById('modal-reserva').style.display = 'none';
+  function cerrarModal() {
+    if (modal.hidden) return;
+    modal.hidden = true;
     document.body.style.overflow = '';
-    planSeleccionado = null; horarioSeleccionado = null; diaSeleccionado = null;
+    state.plan = null; state.sel = new Map();
+    if (state.lastFocus && state.lastFocus.focus) state.lastFocus.focus();
   }
 
-  function irPaso2() {
-    const nombre = document.getElementById('r-nombre').value.trim();
-    const apellido = document.getElementById('r-apellido').value.trim();
-    const telefono = document.getElementById('r-telefono').value.trim();
-    const err = document.getElementById('error-paso1');
-    if (!nombre || !apellido || !telefono) { err.textContent = 'Completá todos los campos'; err.style.display = 'block'; return; }
-    err.style.display = 'none';
-    document.getElementById('modal-paso1').style.display = 'none';
-    document.getElementById('modal-paso2').style.display = 'block';
-    cargarDiasModal();
+  function irPaso(n) {
+    [1, 2, 3].forEach(i => { $('#paso' + i).hidden = i !== n; });
+    $('#modal-step').textContent = `Paso ${n} de 3`;
+    $('#modal-title').textContent = PASOS[n];
+    modal.scrollTop = 0;
+    if (n === 2) renderPaso2();
+    if (n === 3) renderPaso3();
+    if (n !== 1) $('#modal-title').focus();
   }
 
-  function volverPaso1() { document.getElementById('modal-paso2').style.display = 'none'; document.getElementById('modal-paso1').style.display = 'block'; }
-  function volverPaso2() { document.getElementById('modal-paso3').style.display = 'none'; document.getElementById('modal-paso2').style.display = 'block'; }
-
-  function cargarDiasModal() {
-    const dias = ['Lunes','Martes','Miércoles','Jueves','Viernes'];
-    const grid = document.getElementById('r-dias-grid');
-    const hoy = new Date();
-    const disponibles = [];
-    for (let i = 0; i <= 14; i++) {
-      const d = new Date(hoy);
-      d.setDate(hoy.getDate() + i);
-      const nombre = DIAS_SEMANA[d.getDay()];
-      if (dias.includes(nombre)) {
-        disponibles.push({ nombre, fecha: d.toISOString().split('T')[0], label: i === 0 ? 'Hoy' : i === 1 ? 'Mañana' : d.toLocaleDateString('es-AR', { day: 'numeric', month: 'short' }) });
-      }
-      if (disponibles.length >= 5) break;
-    }
-    grid.innerHTML = disponibles.map(d => `
-      <button onclick="seleccionarDiaModal('${d.nombre}', '${d.fecha}', this)" style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:10px 16px;background:var(--gray);color:var(--light-gray);border:1px solid rgba(255,255,255,0.08);cursor:pointer;transition:all 0.2s;line-height:1.3;">
-        <div>${d.nombre}</div><div style="font-size:10px;opacity:0.6;">${d.label}</div>
-      </button>
-    `).join('');
+  // Paso 1: validar datos
+  function validarPaso1() {
+    const nombre = $('#r-nombre').value.trim();
+    const apellido = $('#r-apellido').value.trim();
+    const telefono = $('#r-telefono').value.trim();
+    const digitos = telefono.replace(/\D/g, '');
+    const err = $('#error-paso1');
+    if ($('#r-web').value) return false; // honeypot: un bot lo completó
+    let msg = '';
+    if (nombre.length < 2 || apellido.length < 2) msg = 'Completá tu nombre y apellido.';
+    else if (digitos.length < 8 || digitos.length > 13) msg = 'Ingresá un teléfono válido, por ejemplo 2604123456.';
+    err.textContent = msg;
+    err.classList.toggle('show', !!msg);
+    if (msg) return false;
+    state.datos = { nombre, apellido, telefono };
+    return true;
   }
 
-  async function seleccionarDiaModal(dia, fecha, el) {
-    document.querySelectorAll('#r-dias-grid button').forEach(b => { b.style.background='var(--gray)'; b.style.color='var(--light-gray)'; b.style.borderColor='rgba(255,255,255,0.08)'; });
-    el.style.background = 'var(--red)'; el.style.color = 'var(--white)'; el.style.borderColor = 'var(--red)';
-    diaSeleccionado = { dia, fecha };
-    document.getElementById('r-horarios-wrap').style.display = 'block';
-    document.getElementById('r-horarios-lista').innerHTML = '<div style="font-family:\'Barlow Condensed\',sans-serif;font-size:13px;letter-spacing:2px;color:var(--light-gray);text-transform:uppercase;padding:12px 0;">Cargando...</div>';
+  // Paso 2: elegir un horario por día hasta completar los de su plan
+  async function cargarHorarios(force) {
+    if (state.horarios && !force) return state.horarios;
+    const data = await apiGet('horarios');
+    if (!Array.isArray(data)) throw new Error('Respuesta inválida');
+    state.horarios = data;
+    return data;
+  }
 
+  async function renderPaso2(force = false) {
+    const cont = $('#r-dias');
+    $('#r-total').textContent = state.plan.veces;
+    $('#r-hint').textContent = '';
+    actualizarContador();
+    cont.replaceChildren(h('p', { class: 'msg' }, 'Cargando horarios…'));
     try {
-      todosLosHorarios = await apiGet('horarios');
-      const delDia = todosLosHorarios.filter(h => h.dia === dia);
-      document.getElementById('r-horarios-lista').innerHTML = delDia.map(h => `
-        <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--gray);border:1px solid rgba(255,255,255,0.06);flex-wrap:wrap;gap:8px;opacity:${h.cupo_disponible == 0 ? '0.5' : '1'};">
-          <div>
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;">${h.hora}</div>
-            <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:${h.cupo_disponible == 0 ? 'var(--red)' : h.cupo_disponible <= 2 ? '#f97316' : '#22c55e'};">
-              ${h.cupo_disponible == 0 ? 'COMPLETO' : `${h.cupo_disponible} lugar${h.cupo_disponible != 1 ? 'es' : ''} libre${h.cupo_disponible != 1 ? 's' : ''}`}
-            </div>
-          </div>
-          ${h.cupo_disponible == 0
-            ? `<span style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--light-gray);background:var(--dark2);padding:8px 16px;">SIN LUGAR</span>`
-            : `<button onclick="seleccionarHorario('${h.id}','${h.hora}')" style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;background:var(--red);color:var(--white);border:none;padding:10px 20px;cursor:pointer;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);">Elegir</button>`
-          }
-        </div>
-      `).join('');
-    } catch(e) {
-      document.getElementById('r-horarios-lista').innerHTML = '<div style="color:var(--red);font-family:\'Barlow Condensed\',sans-serif;font-size:13px;">Error al cargar horarios</div>';
+      pintarDias(await cargarHorarios(force));
+    } catch (_) {
+      cont.replaceChildren(
+        h('p', { class: 'msg err' }, 'No pudimos cargar los horarios. Revisá tu conexión e intentá de nuevo.'),
+        h('div', { class: 'msg-actions' },
+          h('button', { type: 'button', class: 'btn-ghost', onclick: () => renderPaso2(true) }, 'Reintentar'),
+          h('a', { class: 'btn-ghost', href: waLink('profe'), target: '_blank', rel: 'noopener noreferrer' }, 'Escribir por WhatsApp')));
     }
   }
 
-  function seleccionarHorario(id, hora) {
-    horarioSeleccionado = { id, hora };
-    irPaso3();
-  }
+  function pintarDias(data) {
+    const cont = $('#r-dias');
+    cont.replaceChildren();
+    let hayAlguno = false;
+    DIAS.forEach(dia => {
+      const permitidos = RESERVABLES[dia];
+      if (!permitidos) return;
+      const slots = data
+        .filter(x => norm(x.dia) === norm(dia))
+        .map(x => ({ x, ini: horaInicio(x.hora) }))
+        .filter(s => s.ini && permitidos.has(s.ini))
+        .sort((a, b) => a.ini.localeCompare(b.ini));
+      if (!slots.length) return;
+      hayAlguno = true;
 
-  function irPaso3() {
-    const nombre = document.getElementById('r-nombre').value.trim();
-    const apellido = document.getElementById('r-apellido').value.trim();
-    document.getElementById('confirm-nombre').textContent = `${nombre} ${apellido}`;
-    document.getElementById('confirm-plan').textContent = PLANES_MP[planSeleccionado].nombre.split('—')[0].trim();
-    document.getElementById('confirm-horario').textContent = `${diaSeleccionado.dia} ${horarioSeleccionado.hora}`;
-    document.getElementById('confirm-fecha').textContent = new Date().toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
-    document.getElementById('btn-ir-mp').href = linkMPSeleccionado;
-    document.getElementById('modal-paso2').style.display = 'none';
-    document.getElementById('modal-paso3').style.display = 'block';
-  }
-
-  async function registrarPreReserva() {
-    const nombre = document.getElementById('r-nombre').value.trim();
-    const apellido = document.getElementById('r-apellido').value.trim();
-    const telefono = document.getElementById('r-telefono').value.trim();
-    try {
-      await apiPost('clientes', null, null, {
-        nombre: `${nombre} ${apellido}`,
-        telefono,
-        plan: planSeleccionado,
-        horario: `${diaSeleccionado.dia} ${horarioSeleccionado.hora}`
+      const botones = slots.map(({ x, ini }) => {
+        const raw = x.cupo_disponible;
+        const cupo = (raw === '' || raw == null) ? NaN : Number(raw);
+        const lleno = cupo === 0;
+        const etiqueta = lleno ? 'Completo' : Number.isFinite(cupo) ? `${cupo} lugar${cupo === 1 ? '' : 'es'}` : 'Disponible';
+        const cls = lleno ? 'full' : (Number.isFinite(cupo) && cupo <= 2) ? 'low' : 'ok';
+        const sel = state.sel.get(dia);
+        return h('button', {
+          type: 'button', class: 'slot', disabled: lleno, 'data-id': String(x.id),
+          'aria-pressed': sel && String(sel.id) === String(x.id) ? 'true' : 'false',
+          onclick: () => toggleSlot(dia, { id: String(x.id), hora: x.hora, ini, actividad: permitidos.get(ini) })
+        }, h('span', { class: 's-hora' }, ini), h('span', { class: 's-cupo ' + cls }, etiqueta));
       });
-    } catch(e) { }
-    const msg = encodeURIComponent(
+
+      cont.append(h('div', { class: 'day-block', 'data-dia': dia },
+        h('div', { class: 'day-title' },
+          h('h3', { class: 'day-name' }, dia),
+          h('span', { class: 'day-act' }, [...new Set(permitidos.values())].join(' · '))),
+        h('div', { class: 'slots' }, botones)));
+    });
+    if (!hayAlguno) {
+      cont.append(h('p', { class: 'msg err' }, 'Todavía no hay horarios disponibles para reservar online. Escribinos por WhatsApp y te ayudamos.'));
+    }
+  }
+
+  function toggleSlot(dia, sel) {
+    const hint = $('#r-hint');
+    hint.textContent = '';
+    const actual = state.sel.get(dia);
+    if (actual && actual.id === sel.id) {
+      state.sel.delete(dia);
+    } else if (!actual && state.sel.size >= state.plan.veces) {
+      hint.textContent = `Tu plan incluye ${state.plan.veces} clases por semana. Quitá un horario para elegir otro.`;
+      return;
+    } else {
+      state.sel.set(dia, sel);
+    }
+    const bloque = $(`.day-block[data-dia="${dia}"]`);
+    const elegido = state.sel.get(dia);
+    $$('.slot', bloque).forEach(b => b.setAttribute('aria-pressed', elegido && b.dataset.id === elegido.id ? 'true' : 'false'));
+    actualizarContador();
+  }
+
+  function actualizarContador() {
+    $('#r-count').textContent = state.sel.size;
+    $('#btn-paso2').disabled = state.sel.size !== state.plan.veces;
+  }
+
+  const seleccionOrdenada = () => DIAS.filter(d => state.sel.has(d)).map(d => ({ dia: d, ...state.sel.get(d) }));
+
+  // Paso 3: confirmar
+  function renderPaso3() {
+    const { nombre, apellido } = state.datos;
+    $('#confirm-nombre').textContent = `${nombre} ${apellido}`;
+    $('#confirm-plan').textContent = `${state.plan.nombre} · ${state.plan.veces} veces por semana`;
+    $('#confirm-horarios').replaceChildren(...seleccionOrdenada().map(s => h('div', {}, `${s.dia} ${s.ini} · ${s.actividad}`)));
+    $('#confirm-fecha').textContent = new Date().toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
+    $('#btn-ir-mp').href = state.plan.link;
+    $('#post-pago').hidden = true;
+    state.registrado = false;
+  }
+
+  function registrarPreReserva() {
+    if (state.registrado) return;
+    state.registrado = true;
+    const { nombre, apellido, telefono } = state.datos;
+    const sel = seleccionOrdenada();
+
+    registrarCliente({
+      nombre: `${nombre} ${apellido}`,
+      telefono,
+      plan: `${state.plan.veces} veces`,
+      horario: sel.map(s => `${s.dia} ${s.hora}`).join(' · ')
+    });
+
+    const msg =
       `🏋️ *NUEVA PRE-RESERVA — DANGER FITNESS*\n\n` +
       `👤 *Nombre:* ${nombre} ${apellido}\n` +
       `📱 *Teléfono:* ${telefono}\n` +
-      `📋 *Plan:* ${PLANES_MP[planSeleccionado].nombre}\n` +
-      `📅 *Horario elegido:* ${diaSeleccionado.dia} ${horarioSeleccionado.hora}\n\n` +
-      `_El cliente fue redirigido a pagar en MercadoPago._`
-    );
-    window.open(`https://wa.me/542604332762?text=${msg}`, '_blank');
+      `📋 *Plan:* ${state.plan.nombre} — ${state.plan.veces} veces por semana ($${fmt(state.plan.precio)}/mes)\n` +
+      `📅 *Horarios elegidos:*\n${sel.map(s => `• ${s.dia} ${s.ini} (${s.actividad})`).join('\n')}\n\n` +
+      `_El cliente fue redirigido a pagar en MercadoPago._`;
+    $('#btn-wa-aviso').href = waLink('profe', msg);
+    $('#post-pago').hidden = false;
+    $('#post-pago').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
-  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
-  window.addEventListener('scroll', () => {
-    document.querySelector('nav').style.borderBottomColor = window.scrollY > 50 ? 'rgba(217,28,28,0.4)' : 'rgba(217,28,28,0.2)';
-  });
-  document.addEventListener('click', (e) => {
-    const menu = document.getElementById('mobileMenu');
-    const hamburger = document.querySelector('.hamburger');
-    if (!menu.contains(e.target) && !hamburger.contains(e.target)) menu.classList.remove('open');
+  // Eventos del modal
+  $('#btn-paso1').addEventListener('click', () => { if (validarPaso1()) irPaso(2); });
+  $('#btn-paso2').addEventListener('click', () => { if (state.sel.size === state.plan.veces) irPaso(3); });
+  $('#back-paso1').addEventListener('click', () => { irPaso(1); $('#r-nombre').focus(); });
+  $('#back-paso2').addEventListener('click', () => irPaso(2));
+  $('#btn-ir-mp').addEventListener('click', registrarPreReserva);
+  $('#modal-close').addEventListener('click', cerrarModal);
+  modal.addEventListener('mousedown', e => { if (e.target === modal) cerrarModal(); });
+  ['r-nombre', 'r-apellido', 'r-telefono'].forEach(id =>
+    $('#' + id).addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); $('#btn-paso1').click(); } }));
+
+  // Foco atrapado dentro del modal
+  modal.addEventListener('keydown', e => {
+    if (e.key !== 'Tab') return;
+    const f = $$('button:not([disabled]), a[href], input:not([tabindex="-1"]), [tabindex="0"]', box).filter(el => el.offsetParent !== null);
+    if (!f.length) return;
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   });
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('visible'), 100); observer.unobserve(entry.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  /* =====================================================================
+     NAVEGACIÓN, ADMIN, REVEAL
+     ===================================================================== */
+  const menu = $('#mobileMenu');
+  const burger = $('#hamburger');
+  function setMenu(abierto) {
+    menu.classList.toggle('open', abierto);
+    burger.setAttribute('aria-expanded', String(abierto));
+    burger.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+  }
+  burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  menu.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('click', e => { if (!menu.contains(e.target) && !burger.contains(e.target)) setMenu(false); });
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if (!modal.hidden) cerrarModal(); else setMenu(false);
+  });
+
+  const nav = $('#nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50), { passive: true });
+
+  // Botón admin: solo se muestra si el dueño entró alguna vez con ?admin=1
+  try {
+    const q = new URLSearchParams(location.search).get('admin');
+    if (q === '1') localStorage.setItem('df_admin', '1');
+    if (q === '0') localStorage.removeItem('df_admin');
+    if (localStorage.getItem('df_admin') === '1') $('#admin-fab').hidden = false;
+  } catch (_) { /* storage bloqueado: el botón simplemente no aparece */ }
+
+  $('#year').textContent = new Date().getFullYear();
+
+  /* ===== Init ===== */
+  renderHorarios();
+  renderPrecios();
+
+  const reveals = $$('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('visible'));
+  }
+})();
 </script>
 </body>
 </html>
